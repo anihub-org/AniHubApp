@@ -3,7 +3,9 @@
     x:Class="AniHubApp.Views.SearchPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="Search">
+    xmlns:prism="http://prismlibrary.com"
+    Title="Search"
+    prism:ViewModelLocator.AutowireViewModel="True">
     <ContentPage.Content>
         <StackLayout>
             <Label

@@ -6,5 +6,6 @@ namespace AniHubApp.ViewModels
 {
     class MainViewModel
     {
+
     }
 }

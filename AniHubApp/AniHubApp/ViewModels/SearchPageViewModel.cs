@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AniHubApp.ViewModels
 {
-    class HomeViewModel
+    class SearchPageViewModel
     {
     }
 }

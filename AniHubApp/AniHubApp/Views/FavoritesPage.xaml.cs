@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace AniHubApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class FavoritePage : ContentPage
+    public partial class FavoritesPage : ContentPage
     {
-        public FavoritePage()
+        public FavoritesPage()
         {
             InitializeComponent();
         }
