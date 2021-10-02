@@ -8,6 +8,7 @@ namespace AniHubApp
     {
         public static class Paths
         {
+            public const string Navigation = "Navigation";
             public const string MainPage = "MainPage";
             public const string HomePage = "HomePage";
             public const string SearchPage = "SearchPage";

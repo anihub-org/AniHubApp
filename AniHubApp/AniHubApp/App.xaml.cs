@@ -17,15 +17,17 @@ namespace AniHubApp
             InitializeComponent();
 
             //NavigationService.NavigateAsync("Main?createTab=Home&createTab=Search&createTab=Favorites");
-            NavigationService.NavigateAsync("Main");
+            //NavigationService.NavigateAsync("Main");
+            NavigationService.NavigateAsync($"{NavigationConstants.Paths.Navigation}/{NavigationConstants.Paths.HomePage}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<MainPage>("Main");
-            containerRegistry.RegisterForNavigation<HomePage>("Home");
-            containerRegistry.RegisterForNavigation<SearchPage>("Search");
-            containerRegistry.RegisterForNavigation<FavoritesPage>("Favorites");
+            containerRegistry.RegisterForNavigation<NavigationPage>(NavigationConstants.Paths.Navigation);
+            containerRegistry.RegisterForNavigation<MainPage, MainViewModel>(NavigationConstants.Paths.MainPage);
+            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>(NavigationConstants.Paths.HomePage);
+            containerRegistry.RegisterForNavigation<SearchPage, SearchPageViewModel>(NavigationConstants.Paths.SearchPage);
+            containerRegistry.RegisterForNavigation<FavoritesPage, FavoritesPageViewModel>(NavigationConstants.Paths.FavoritesPage);
         }
 
     }
