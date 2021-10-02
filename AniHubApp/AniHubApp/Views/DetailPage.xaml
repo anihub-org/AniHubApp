@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="AniHubApp.Views.DetailPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+    <ContentPage.Content>
+        <StackLayout>
+            <Image Source="{Binding CoverImage}" />
+            <Label Text="{Binding Titles.En}" />
+            <Label Text="{Binding Score}" />
+            <Label Text="{Binding Descriptions.En}" />
+            <Button Text="Songs" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

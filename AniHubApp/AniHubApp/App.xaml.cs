@@ -17,7 +17,7 @@ namespace AniHubApp
             InitializeComponent();
 
             //NavigationService.NavigateAsync("Main?createTab=Home&createTab=Search&createTab=Favorites");
-            NavigationService.NavigateAsync("Main");
+            NavigationService.NavigateAsync("/Main");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)

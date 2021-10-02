@@ -9,7 +9,35 @@
     <ContentPage.Content>
         <StackLayout>
             <Label FontSize="Large" Text="Popular" />
-            <CollectionView ItemsSource="{Binding Animes}">
+            <CollectionView ItemsSource="{Binding PopularAnimes}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Image Source="{Binding CoverImage}" />
+                            <Label Text="{Binding Title.En}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label FontSize="Large" Text="Seasonal" />
+            <CollectionView ItemsSource="{Binding SeasonalAnimes}">
+                <CollectionView.ItemsLayout>
+                    <LinearItemsLayout Orientation="Horizontal" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Image Source="{Binding CoverImage}" />
+                            <Label Text="{Binding Title.En}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label FontSize="Large" Text="Song Suggestions" />
+            <CollectionView ItemsSource="{Binding Songs}">
                 <CollectionView.ItemsLayout>
                     <LinearItemsLayout Orientation="Horizontal" />
                 </CollectionView.ItemsLayout>

@@ -8,10 +8,19 @@
     prism:ViewModelLocator.AutowireViewModel="True">
     <ContentPage.Content>
         <StackLayout>
-            <Label
-                HorizontalOptions="CenterAndExpand"
-                Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" />
+            <CollectionView ItemsSource="{Binding SeasonalAnimes}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame>
+                            <Grid RowDefinitions="Auto, *, Auto">
+                                <Image Grid.Row="0" Source="{Binding CoverImage}" />
+                                <Label Grid.Row="1" Text="{Binding Title.En}" />
+                                <Button Grid.Row="2" Text="Favorite" />
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
