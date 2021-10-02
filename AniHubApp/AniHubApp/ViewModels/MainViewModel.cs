@@ -1,11 +1,15 @@
-﻿using System;
+﻿using Prism.Navigation;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AniHubApp.ViewModels
 {
-    class MainViewModel
+    public class MainViewModel : BaseViewModel
     {
+        MainViewModel(INavigationService navigationService) : base(navigationService)
+        {
 
+        }
     }
 }

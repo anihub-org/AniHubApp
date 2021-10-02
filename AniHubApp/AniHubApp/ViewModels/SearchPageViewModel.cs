@@ -1,10 +1,15 @@
-﻿using System;
+﻿using Prism.Navigation;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AniHubApp.ViewModels
 {
-    class SearchPageViewModel
+    public class SearchPageViewModel : BaseViewModel
     {
+        SearchPageViewModel(INavigationService navigationService) : base(navigationService)
+        {
+
+        }
     }
 }
