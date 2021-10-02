@@ -8,12 +8,12 @@ namespace AniHubApp
     {
         public static class Paths
         {
-            public const string Main = "Main";
-            public const string Home = "Home";
-            public const string Search = "Search";
-            public const string Favorites = "Favorites";
-            public const string AnimeDetail = "AnimeDetail";
-            public const string AnimeSongs = "AnimeSongs";
+            public const string MainPage = "MainPage";
+            public const string HomePage = "HomePage";
+            public const string SearchPage = "SearchPage";
+            public const string FavoritesPage = "FavoritesPage";
+            public const string AnimeDetailPage = "AnimeDetailPage";
+            public const string AnimeSongListPage = "AnimeSongListPage";
         }
 
         public static class Parameters
