@@ -4,23 +4,10 @@
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:prism="http://prismlibrary.com"
-    Title="Favorites"
-    prism:ViewModelLocator.AutowireViewModel="True">
+    Title="Favorites">
     <ContentPage.Content>
         <StackLayout>
-            <CollectionView ItemsSource="{Binding SeasonalAnimes}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Frame>
-                            <Grid RowDefinitions="Auto, *, Auto">
-                                <Image Grid.Row="0" Source="{Binding CoverImage}" />
-                                <Label Grid.Row="1" Text="{Binding Title.En}" />
-                                <Button Grid.Row="2" Text="Favorite" />
-                            </Grid>
-                        </Frame>
-                    </DataTemplate>
-                </CollectionView.ItemTemplate>
-            </CollectionView>
+            <Label Text="This is the Favorites Page" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

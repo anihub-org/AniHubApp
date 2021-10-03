@@ -8,7 +8,7 @@ using System.Text;
 
 namespace AniHubApp.ViewModels
 {
-    class HomePageViewModel : BaseViewModel
+    class HomeViewModel : BaseViewModel
     {
         public HomePageViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
         {

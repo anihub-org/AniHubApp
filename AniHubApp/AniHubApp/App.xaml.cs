@@ -11,23 +11,20 @@ namespace AniHubApp
 {
     public partial class App : PrismApplication
     {
-        public App(IPlatformInitializer initializer = null) : base(initializer) { }
+        public App(IPlatformInitializer platformInitializer) : base(platformInitializer) { }
         protected override void OnInitialized()
         {
             InitializeComponent();
-
-            //NavigationService.NavigateAsync("Main?createTab=Home&createTab=Search&createTab=Favorites");
-            //NavigationService.NavigateAsync("Main");
-            NavigationService.NavigateAsync($"{NavigationConstants.Paths.Navigation}/{NavigationConstants.Paths.HomePage}");
+            NavigationService.NavigateAsync($"{NavigationConstants.Paths.MainPage}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<NavigationPage>(NavigationConstants.Paths.Navigation);
-            containerRegistry.RegisterForNavigation<MainPage, MainViewModel>(NavigationConstants.Paths.MainPage);
-            containerRegistry.RegisterForNavigation<HomePage, HomePageViewModel>(NavigationConstants.Paths.HomePage);
-            containerRegistry.RegisterForNavigation<SearchPage, SearchPageViewModel>(NavigationConstants.Paths.SearchPage);
-            containerRegistry.RegisterForNavigation<FavoritesPage, FavoritesPageViewModel>(NavigationConstants.Paths.FavoritesPage);
+            containerRegistry.RegisterForNavigation<NavigationPage>();
+            containerRegistry.RegisterForNavigation<MainPage>(NavigationConstants.Paths.MainPage);
+            containerRegistry.RegisterForNavigation<HomePage>(NavigationConstants.Paths.HomePage);
+            containerRegistry.RegisterForNavigation<SearchPage>(NavigationConstants.Paths.SearchPage);
+            containerRegistry.RegisterForNavigation<FavoritesPage>(NavigationConstants.Paths.FavoritesPage);
         }
 
     }

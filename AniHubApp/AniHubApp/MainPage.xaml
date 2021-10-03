@@ -6,8 +6,20 @@
     xmlns:views="clr-namespace:AniHubApp.Views"
     Title="Main">
     <TabbedPage.Children>
-        <views:HomePage />
-        <views:SearchPage />
-        <views:FavoritesPage />
+        <NavigationPage Title="Home">
+            <x:Arguments>
+                <views:HomePage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Search">
+            <x:Arguments>
+                <views:SearchPage />
+            </x:Arguments>
+        </NavigationPage>
+        <NavigationPage Title="Favorites">
+            <x:Arguments>
+                <views:FavoritesPage />
+            </x:Arguments>
+        </NavigationPage>
     </TabbedPage.Children>
 </TabbedPage>
