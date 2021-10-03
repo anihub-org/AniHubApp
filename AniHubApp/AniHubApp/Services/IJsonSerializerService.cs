@@ -4,7 +4,9 @@ using System.Text;
 
 namespace AniHubApp.Services
 {
-    interface IJsonSerializerService
+    public interface IJsonSerializerService
     {
+        string SerializeObject<T>(T payload);
+        T Deserialize<T>(string payload);
     }
 }

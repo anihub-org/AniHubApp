@@ -12,12 +12,12 @@ namespace AniHubApp.Models
         [JsonPropertyName("message")]
         public string Message { get; set; }
         [JsonPropertyName("data")]
-        public Data Data { get; set; }
+        public SongData Data { get; set; }
         [JsonPropertyName("version")]
         public string Version { get; set; }
     }
 
-    internal class Data
+    public class SongData
     {
         [JsonPropertyName("current_page")]
         public int CurrentPage { get; set; }

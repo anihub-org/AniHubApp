@@ -11,7 +11,7 @@ namespace AniHubApp.Services
     {
         Task<AnimeListResponse> GetAnimesAsync(AniAPI.AnimeListQueryParams queryParams = null);
         Task<AnimeResponse> GetAnimeByIdAsync(int animeId);
-        Task<SongListResponse> GetAnimeSongsAsync(AniAPI.AnimeSongsListQueryParams = null);
+        Task<SongListResponse> GetAnimeSongsAsync(AniAPI.AnimeSongsListQueryParams queryParams = null);
         Task<SongResponse> GetAnimeSongByIdAsync(int animeSongId);
     }
 }
