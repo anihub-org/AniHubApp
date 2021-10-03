@@ -25,12 +25,12 @@ namespace AniHubApp.iOS
         public override bool FinishedLaunching(UIApplication app, NSDictionary options)
         {
             global::Xamarin.Forms.Forms.Init();
-            LoadApplication(new App());
+            LoadApplication(new App(new IosPlatformInitializer()));
 
             return base.FinishedLaunching(app, options);
         }
 
-        public class IosPlatforminitializer : IPlatformInitializer
+        public class IosPlatformInitializer : IPlatformInitializer
         {
             public void RegisterTypes(IContainerRegistry containerRegistry)
             {
