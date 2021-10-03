@@ -9,13 +9,8 @@
                    Padding="0">
                 <Button 
                     Text="Tap on me to start!"
-                    VerticalOptions="CenterAndExpand" 
-                    HorizontalOptions="CenterAndExpand"
-                    HeightRequest="800"
-                    WidthRequest="500"
-                    BorderColor="Transparent"
-                    BackgroundColor="Transparent"
-                    Padding="0"
+                    VerticalOptions="Center" 
+                    HorizontalOptions="Center"
                     Command="{Binding TapCommand}"/>
             </Frame>
         </StackLayout>
