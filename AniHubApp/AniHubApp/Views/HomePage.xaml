@@ -7,7 +7,7 @@
     Title="Home">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is the Home Page" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="This is the Home Page" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

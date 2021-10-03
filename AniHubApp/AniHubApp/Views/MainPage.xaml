@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AniHubApp.Views.MainPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Frame HorizontalOptions="FillAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   Padding="0">
+                <Button 
+                    Text="Tap on me to start!"
+                    VerticalOptions="CenterAndExpand" 
+                    HorizontalOptions="CenterAndExpand"
+                    HeightRequest="800"
+                    WidthRequest="500"
+                    BorderColor="Transparent"
+                    BackgroundColor="Transparent"
+                    Padding="0"
+                    Command="{Binding TapCommand}"/>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

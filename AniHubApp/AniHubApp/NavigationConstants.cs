@@ -10,6 +10,7 @@ namespace AniHubApp
         {
             public const string Navigation = "Navigation";
             public const string MainPage = "MainPage";
+            public const string ContainerTabbedPage = "ContainerTabbedPage";
             public const string HomePage = "HomePage";
             public const string SearchPage = "SearchPage";
             public const string FavoritesPage = "FavoritesPage";
