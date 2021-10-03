@@ -15,13 +15,13 @@ namespace AniHubApp
             public const string AnimeSongsListPath = "/v1/song";
             public const string AnimeSongDetailPath = "/v1/song/{id}";
 
-            public static class AnimeListQueryParams
+            public class AnimeListQueryParams
             {
                 [AliasAs("season")]
                 public string SeasonPeriod { get; set; }
             }
 
-            public static class AnimeSongsListQueryParams
+            public class AnimeSongsListQueryParams
             {
                 [AliasAs("anime_id")]
                 public string AnimeId { get; set; }
