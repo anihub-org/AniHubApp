@@ -5,9 +5,9 @@ using System.Text;
 
 namespace AniHubApp.ViewModels
 {
-    class FavoritesPageViewModel : BaseViewModel
+    public class FavoritesViewModel : BaseViewModel
     {
-        FavoritesPageViewModel(INavigationService navigationService) : base(navigationService)
+        FavoritesViewModel(INavigationService navigationService) : base(navigationService)
         {
 
         }

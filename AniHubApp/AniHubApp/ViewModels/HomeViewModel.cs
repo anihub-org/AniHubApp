@@ -7,11 +7,11 @@ using System.Text;
 
 namespace AniHubApp.ViewModels
 {
-    class HomePageViewModel : BaseViewModel
+    class HomeViewModel : BaseViewModel
     {
-        //public ObservableCollection<Anime> Animes { get; } = new ObservableCollection<Anime>();
+        public ObservableCollection<Anime> Animes { get; } = new ObservableCollection<Anime>();
 
-        HomePageViewModel(INavigationService navigationService) : base(navigationService)
+        HomeViewModel(INavigationService navigationService) : base(navigationService)
         {
             Animes = new ObservableCollection<Anime>();
 

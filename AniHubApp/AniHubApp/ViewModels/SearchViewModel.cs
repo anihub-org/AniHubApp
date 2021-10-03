@@ -5,9 +5,9 @@ using System.Text;
 
 namespace AniHubApp.ViewModels
 {
-    public class SearchPageViewModel : BaseViewModel
+    class SearchViewModel : BaseViewModel
     {
-        SearchPageViewModel(INavigationService navigationService) : base(navigationService)
+        SearchViewModel(INavigationService navigationService) : base(navigationService)
         {
 
         }
