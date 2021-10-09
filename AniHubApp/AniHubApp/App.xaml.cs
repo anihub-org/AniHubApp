@@ -1,4 +1,5 @@
-﻿using AniHubApp.ViewModels;
+﻿using AniHubApp.Services;
+using AniHubApp.ViewModels;
 using AniHubApp.Views;
 using Prism;
 using Prism.Ioc;
@@ -25,6 +26,7 @@ namespace AniHubApp
             containerRegistry.RegisterForNavigation<HomePage>(NavigationConstants.Paths.HomePage);
             containerRegistry.RegisterForNavigation<SearchPage>(NavigationConstants.Paths.SearchPage);
             containerRegistry.RegisterForNavigation<FavoritesPage>(NavigationConstants.Paths.FavoritesPage);
+            containerRegistry.Register<IJsonSerializerService, JsonSerializerService>();
         }
 
     }
