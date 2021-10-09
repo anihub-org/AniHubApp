@@ -22,12 +22,13 @@ namespace AniHubApp
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
             containerRegistry.RegisterForNavigation<NavigationPage>(NavigationConstants.Paths.Navigation);
-            containerRegistry.RegisterForNavigation<MainPage>(NavigationConstants.Paths.MainPage);
+            containerRegistry.RegisterForNavigation<MainPage, MainViewModel>(NavigationConstants.Paths.MainPage);
             containerRegistry.RegisterForNavigation<ContainerTabbedPage>(NavigationConstants.Paths.ContainerTabbedPage);
             containerRegistry.RegisterForNavigation<HomePage>(NavigationConstants.Paths.HomePage);
             containerRegistry.RegisterForNavigation<SearchPage>(NavigationConstants.Paths.SearchPage);
             containerRegistry.RegisterForNavigation<FavoritesPage>(NavigationConstants.Paths.FavoritesPage);
-            containerRegistry.Register<IJsonSerializerService, JsonSerializerService>();
+
+            containerRegistry.RegisterInstance<IAniApiService>(new AniApiService(new JsonSerializerService()));
         }
 
     }

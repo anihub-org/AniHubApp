@@ -11,7 +11,7 @@ namespace AniHubApp.ViewModels
     public class MainViewModel : BaseViewModel
     {
         public ICommand TapCommand { get; }
-        private async void OnTap() => await NavigationService.NavigateAsync("/" + NavigationConstants.Paths.ContainerTabbedPage);
+        private async void OnTap() => await NavigationService.NavigateAsync($"/{NavigationConstants.Paths.ContainerTabbedPage}");
 
         public MainViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
         {

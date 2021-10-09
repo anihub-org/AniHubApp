@@ -8,7 +8,7 @@ namespace AniHubApp.ViewModels
 {
     public class FavoritesViewModel : BaseViewModel
     {
-        public FavoritesPageViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
+        public FavoritesViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
         {
 
         }

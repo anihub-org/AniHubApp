@@ -9,13 +9,13 @@ namespace AniHubApp
         public static class Paths
         {
             public const string Navigation = "Navigation";
-            public const string MainPage = "MainPage";
-            public const string ContainerTabbedPage = "ContainerTabbedPage";
-            public const string HomePage = "HomePage";
-            public const string SearchPage = "SearchPage";
-            public const string FavoritesPage = "FavoritesPage";
-            public const string AnimeDetailPage = "AnimeDetailPage";
-            public const string AnimeSongListPage = "AnimeSongListPage";
+            public const string MainPage = "Main";
+            public const string ContainerTabbedPage = "ContainerTabbed";
+            public const string HomePage = "Home";
+            public const string SearchPage = "Search";
+            public const string FavoritesPage = "Favorites";
+            public const string AnimeDetailPage = "AnimeDetail";
+            public const string AnimeSongListPage = "AnimeSongList";
         }
 
         public static class Parameters

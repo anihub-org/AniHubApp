@@ -19,6 +19,5 @@ namespace AniHubApp.ViewModels
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
-
     }
 }

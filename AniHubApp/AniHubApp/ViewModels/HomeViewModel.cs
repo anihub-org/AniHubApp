@@ -10,7 +10,7 @@ namespace AniHubApp.ViewModels
 {
     class HomeViewModel : BaseViewModel
     {
-        public HomePageViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
+        public HomeViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
         {
 
         }
