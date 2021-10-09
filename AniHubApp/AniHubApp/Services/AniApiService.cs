@@ -12,10 +12,11 @@ namespace AniHubApp.Services
     {
         private IAniApi _aniApi;
 
-        private IJsonSerializerService serializer = new JsonSerializerService();
+        private IJsonSerializerService _serializer;
 
-        public AniApiService()
+        public AniApiService(IJsonSerializerService json_serializerService)
         {
+            _serializer = json_serializerService;
             _aniApi = RestService.For<IAniApi>(AniAPI.BaseURL);
         }
 
@@ -27,7 +28,7 @@ namespace AniHubApp.Services
             {
                 var responseString = await response.Content.ReadAsStringAsync();
 
-                var animeResponse = serializer.Deserialize<AnimeResponse>(responseString);
+                var animeResponse = _serializer.Deserialize<AnimeResponse>(responseString);
 
                 return animeResponse;
             }
@@ -43,7 +44,7 @@ namespace AniHubApp.Services
             {
                 var responseString = await response.Content.ReadAsStringAsync();
 
-                var animeListResponse = serializer.Deserialize<AnimeListResponse>(responseString);
+                var animeListResponse = _serializer.Deserialize<AnimeListResponse>(responseString);
 
                 return animeListResponse;
             }
@@ -59,7 +60,7 @@ namespace AniHubApp.Services
             {
                 var responseString = await response.Content.ReadAsStringAsync();
 
-                var animeSongResponse = serializer.Deserialize<SongResponse>(responseString);
+                var animeSongResponse = _serializer.Deserialize<SongResponse>(responseString);
 
                 return animeSongResponse;
             }
@@ -75,7 +76,7 @@ namespace AniHubApp.Services
             {
                 var responseString = await response.Content.ReadAsStringAsync();
 
-                var animeSongsListResponse = serializer.Deserialize<SongListResponse>(responseString);
+                var animeSongsListResponse = _serializer.Deserialize<SongListResponse>(responseString);
 
                 return animeSongsListResponse;
             }
