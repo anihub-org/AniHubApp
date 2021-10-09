@@ -14,9 +14,9 @@ namespace AniHubApp.Services
 
         private IJsonSerializerService _serializer;
 
-        public AniApiService(IJsonSerializerService json_serializerService)
+        public AniApiService(IJsonSerializerService jsonSerializerService)
         {
-            _serializer = json_serializerService;
+            _serializer = jsonSerializerService;
             _aniApi = RestService.For<IAniApi>(AniAPI.BaseURL);
         }
 
