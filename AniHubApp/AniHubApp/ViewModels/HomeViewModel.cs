@@ -1,4 +1,5 @@
 ﻿using AniHubApp.Models;
+using AniHubApp.Services;
 using Prism.Navigation;
 using System;
 using System.Collections.Generic;
@@ -9,14 +10,9 @@ namespace AniHubApp.ViewModels
 {
     class HomeViewModel : BaseViewModel
     {
-        public ObservableCollection<Anime> Animes { get; } = new ObservableCollection<Anime>();
-
-        HomeViewModel(INavigationService navigationService) : base(navigationService)
+        public HomePageViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
         {
-            Animes = new ObservableCollection<Anime>();
 
-            //Animes.Add(new Anime{Titles = new Titles{En="Test"}, CoverImage="https://64.media.tumblr.com/7207535226942d06e3f1f7eaf8b8b6cc/tumblr_nusthrNjZn1qkkg9mo1_1280.png" });
-            //Animes.Add(new Anime{Titles = new Titles{En="Test"}, CoverImage="https://64.media.tumblr.com/7207535226942d06e3f1f7eaf8b8b6cc/tumblr_nusthrNjZn1qkkg9mo1_1280.png" });
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Prism.Navigation;
+﻿using AniHubApp.Services;
+using Prism.Navigation;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -10,14 +11,11 @@ namespace AniHubApp.ViewModels
     public class MainViewModel : BaseViewModel
     {
         public ICommand TapCommand { get; }
-        private async void OnTap() => await _navigationService.NavigateAsync("/" + NavigationConstants.Paths.ContainerTabbedPage);
+        private async void OnTap() => await NavigationService.NavigateAsync("/" + NavigationConstants.Paths.ContainerTabbedPage);
 
-        INavigationService _navigationService;
-        MainViewModel(INavigationService navigationService) : base(navigationService)
+        public MainViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
         {
-            _navigationService = navigationService;
             TapCommand = new Command(OnTap);
-
         }
     }
 }
