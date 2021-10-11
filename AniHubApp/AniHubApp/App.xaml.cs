@@ -16,17 +16,19 @@ namespace AniHubApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync($"{NavigationConstants.Paths.MainPage}");
+            NavigationService.NavigateAsync($"{NavigationConstants.Paths.Navigation}/{NavigationConstants.Paths.MainPage}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
         {
-            containerRegistry.RegisterForNavigation<NavigationPage>();
-            containerRegistry.RegisterForNavigation<MainPage>(NavigationConstants.Paths.MainPage);
-            containerRegistry.RegisterForNavigation<HomePage>(NavigationConstants.Paths.HomePage);
-            containerRegistry.RegisterForNavigation<SearchPage>(NavigationConstants.Paths.SearchPage);
-            containerRegistry.RegisterForNavigation<FavoritesPage>(NavigationConstants.Paths.FavoritesPage);
-            containerRegistry.Register<IJsonSerializerService, JsonSerializerService>();
+            containerRegistry.RegisterForNavigation<NavigationPage>(NavigationConstants.Paths.Navigation);
+            containerRegistry.RegisterForNavigation<MainPage, MainViewModel>(NavigationConstants.Paths.MainPage);
+            containerRegistry.RegisterForNavigation<ContainerTabbedPage>(NavigationConstants.Paths.ContainerTabbedPage);
+            containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>(NavigationConstants.Paths.HomePage);
+            containerRegistry.RegisterForNavigation<SearchPage, SearchViewModel>(NavigationConstants.Paths.SearchPage);
+            containerRegistry.RegisterForNavigation<FavoritesPage, FavoritesViewModel>(NavigationConstants.Paths.FavoritesPage);
+
+            containerRegistry.RegisterInstance<IAniApiService>(new AniApiService(new JsonSerializerService()));
         }
 
     }

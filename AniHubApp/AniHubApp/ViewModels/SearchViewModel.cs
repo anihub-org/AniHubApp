@@ -8,7 +8,7 @@ namespace AniHubApp.ViewModels
 {
     class SearchViewModel : BaseViewModel
     {
-        public SearchPageViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
+        public SearchViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
         {
 
         }
