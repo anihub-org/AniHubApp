@@ -136,4 +136,7 @@
       <Name>AniHubApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\searchIcon.svg" />
+  </ItemGroup>
 </Project>
