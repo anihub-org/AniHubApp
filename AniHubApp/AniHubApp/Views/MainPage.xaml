@@ -1,18 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AniHubApp.Views.MainPage">
+             x:Class="AniHubApp.Views.MainPage"
+             NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
-        <StackLayout>
-            <Frame HorizontalOptions="FillAndExpand"
-                   VerticalOptions="FillAndExpand"
-                   Padding="0">
-                <Button 
-                    Text="Tap on me to start!"
-                    VerticalOptions="Center" 
-                    HorizontalOptions="Center"
-                    Command="{Binding TapCommand}"/>
-            </Frame>
-        </StackLayout>
+        <Grid
+            RowDefinitions="Auto, Auto"
+            Padding="10, 80"
+            HorizontalOptions="Center"
+            VerticalOptions="End">
+
+            <Label
+                Grid.Row="0"
+                Text="Find your favorite animes here!"
+                FontSize="Large"/>
+            <Button
+                Grid.Row="1"
+                Text="Discover Animes!"
+                TextTransform="None"
+                FontSize="Medium"
+                HorizontalOptions="CenterAndExpand"
+                CornerRadius="30"
+                Command="{Binding NavigateToHomePageCommand}"/>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

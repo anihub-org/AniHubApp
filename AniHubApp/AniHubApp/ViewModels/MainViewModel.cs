@@ -10,12 +10,12 @@ namespace AniHubApp.ViewModels
 {
     public class MainViewModel : BaseViewModel
     {
-        public ICommand TapCommand { get; }
-        private async void OnTap() => await NavigationService.NavigateAsync($"/{NavigationConstants.Paths.ContainerTabbedPage}");
+        public ICommand NavigateToHomePageCommand { get; }
+        private async void OnNavigation() => await NavigationService.NavigateAsync($"/{NavigationConstants.Paths.ContainerTabbedPage}");
 
         public MainViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
         {
-            TapCommand = new Command(OnTap);
+            NavigateToHomePageCommand = new Command(OnNavigation);
         }
     }
 }
