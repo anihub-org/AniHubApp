@@ -7,7 +7,18 @@
     Title="Search">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is the Home Page" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Frame Padding="15" Margin="7">
+                <StackLayout Orientation="Horizontal">
+                    <Image Source="searchIcon.xml"/>
+                    <Label 
+                        Text="Anime" 
+                        TextColor="Black"
+                        FontSize="Medium"
+                        Margin="0" 
+                        VerticalOptions="Center"/>
+                </StackLayout>
+            </Frame>
+            <Label Text="This is the Search Page" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
