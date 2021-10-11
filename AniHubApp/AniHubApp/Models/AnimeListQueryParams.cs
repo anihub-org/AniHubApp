@@ -7,7 +7,12 @@ namespace AniHubApp.Models
 {
     public class AnimeListQueryParams
     {
+        public AnimeListQueryParams(int season)
+        {
+            SeasonPeriod = season;
+        }
+
         [AliasAs("season")]
-        public string SeasonPeriod { get; set; }
+        public int SeasonPeriod { get; }
     }
 }

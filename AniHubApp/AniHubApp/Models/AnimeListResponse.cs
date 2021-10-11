@@ -8,24 +8,24 @@ namespace AniHubApp.Models
     public class AnimeListResponse
     {
         [JsonPropertyName("status_code")]
-        public int StatusCode { get; set; }
+        public int StatusCode { get; }
         [JsonPropertyName("message")]
-        public string Message { get; set; }
+        public string Message { get; }
         [JsonPropertyName("data")]
-        public AnimeData Data { get; set; }
+        public AnimeData Data { get; }
         [JsonPropertyName("version")]
-        public string Version { get; set; }
+        public string Version { get; }
     }
 
     public class AnimeData
     {
         [JsonPropertyName("current_page")]
-        public int CurrentPage { get; set; }
+        public int CurrentPage { get; }
         [JsonPropertyName("count")]
-        public int Count { get; set; }
+        public int Count { get; }
         [JsonPropertyName("documents")]
-        public List<Anime> Animes { get; set; }
+        public List<Anime> Animes { get; }
         [JsonPropertyName("last_page")]
-        public int LastPage { get; set; }
+        public int LastPage { get; }
     }
 }

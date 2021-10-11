@@ -8,24 +8,24 @@ namespace AniHubApp.Models
     public class SongListResponse
     {
         [JsonPropertyName("status_code")]
-        public int StatusCode { get; set; }
+        public int StatusCode { get; }
         [JsonPropertyName("message")]
-        public string Message { get; set; }
+        public string Message { get; }
         [JsonPropertyName("data")]
-        public SongData Data { get; set; }
+        public SongData Data { get; }
         [JsonPropertyName("version")]
-        public string Version { get; set; }
+        public string Version { get; }
     }
 
     public class SongData
     {
         [JsonPropertyName("current_page")]
-        public int CurrentPage { get; set; }
+        public int CurrentPage { get; }
         [JsonPropertyName("count")]
-        public int Count { get; set; }
+        public int Count { get; }
         [JsonPropertyName("documents")]
-        public List<Song> Songs { get; set; }
+        public List<Song> Songs { get; }
         [JsonPropertyName("last_page")]
-        public int LastPage { get; set; }
+        public int LastPage { get; }
     }
 }

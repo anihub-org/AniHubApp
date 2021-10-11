@@ -8,40 +8,40 @@ namespace AniHubApp.Models
     public class SongResponse
     {
         [JsonPropertyName("status_code")]
-        public int StatusCode { get; set; }
+        public int StatusCode { get; }
         [JsonPropertyName("message")]
-        public string Message { get; set; }
+        public string Message { get; }
         [JsonPropertyName("data")]
-        public Song Data { get; set; }
+        public Song Data { get; }
         [JsonPropertyName("version")]
-        public string Version { get; set; }
+        public string Version { get; }
     }
 
     public class Song
     {
         [JsonPropertyName("id")]
-        public int ID { get; set; }
+        public int ID { get; }
         [JsonPropertyName("anime_id")]
-        public int AnimeID { get; set; }
+        public int AnimeID { get; }
         [JsonPropertyName("title")]
-        public string Title { get; set; }
+        public string Title { get; }
         [JsonPropertyName("artist")]
-        public string Artist { get; set; }
+        public string Artist { get; }
         [JsonPropertyName("album")]
-        public string Album { get; set; }
+        public string Album { get; }
         [JsonPropertyName("year")]
-        public int Year { get; set; }
+        public int Year { get; }
         [JsonPropertyName("season")]
-        public int Season { get; set; }
+        public int Season { get; }
         [JsonPropertyName("duration")]
-        public string DurationInMilliseconds { get; set; }
+        public string DurationInMilliseconds { get; }
         [JsonPropertyName("preview_url")]
-        public string PreviewURL { get; set; }
+        public string PreviewURL { get; }
         [JsonPropertyName("open_spotify_url")]
-        public string OpenSpotifyURL { get; set; }
+        public string OpenSpotifyURL { get; }
         [JsonPropertyName("local_spotify_url")]
-        public string LocalSpotifyURL { get; set; }
+        public string LocalSpotifyURL { get; }
         [JsonPropertyName("type")]
-        public string Type { get; set; }
+        public string Type { get; }
     }
 }
