@@ -19,11 +19,13 @@ namespace AniHubApp.ViewModels
         public ObservableCollection<Anime> SeasonalAnimes { get; set; }
         public ObservableCollection<Song> SongSuggestions { get; set; }
 
+        private IAniApiService _aniApiService;
         private IPageDialogService _pageDialogService;
 
-        public HomeViewModel(INavigationService navigationService, IAniApiService aniApiService, IPageDialogService pageDialogService) : base(navigationService, aniApiService)
+        public HomeViewModel(INavigationService navigationService, IAniApiService aniApiService, IPageDialogService pageDialogService) : base(navigationService)
         {
             _pageDialogService = pageDialogService;
+            _aniApiService = aniApiService;
         }
 
         public void Initialize(INavigationParameters parameters)
@@ -41,7 +43,7 @@ namespace AniHubApp.ViewModels
                 return;
             }
 
-            var response = await AniApiService.GetAnimesAsync();
+            var response = await _aniApiService.GetAnimesAsync();
 
             var popularAnimes = response.Data.Animes.Where(anime => anime.Score >= BASE_POPULAR_ANIME_SCORE);
             PopularAnimes = new ObservableCollection<Anime>(popularAnimes);
@@ -57,7 +59,7 @@ namespace AniHubApp.ViewModels
 
             var queryParams = new AnimeListQueryParams(Season.GetCurrentSeasonValue());
 
-            var response = await AniApiService.GetAnimesAsync(queryParams);
+            var response = await _aniApiService.GetAnimesAsync(queryParams);
             SeasonalAnimes = new ObservableCollection<Anime>(response.Data.Animes);
         }
 
@@ -71,7 +73,7 @@ namespace AniHubApp.ViewModels
 
             var queryParams = new AnimeSongsListQueryParams(Season.GetCurrentSeasonValue());
 
-            var response = await AniApiService.GetAnimeSongsAsync(queryParams);
+            var response = await _aniApiService.GetAnimeSongsAsync(queryParams);
             SongSuggestions = new ObservableCollection<Song>(response.Data.Songs);
         }
 
