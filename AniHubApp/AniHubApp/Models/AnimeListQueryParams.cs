@@ -1,12 +1,11 @@
 ﻿using Refit;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace AniHubApp.Models
 {
     public class AnimeListQueryParams
     {
+        public AnimeListQueryParams() { }
+
         public AnimeListQueryParams(int season)
         {
             SeasonPeriod = season;

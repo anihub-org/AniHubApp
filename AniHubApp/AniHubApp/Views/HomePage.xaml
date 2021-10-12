@@ -1,13 +1,96 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    x:Class="AniHubApp.Views.HomePage"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:prism="http://prismlibrary.com"
-    Title="Home">
+<ContentPage x:Class="AniHubApp.Views.HomePage"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="http://prismlibrary.com"
+            Title="Home">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="This is the Home Page" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid
+            RowDefinitions="Auto, Auto, Auto, Auto, Auto, Auto"
+            Padding="10">
+
+            <Label
+                Grid.Row="0"
+                Text="Popular"
+                FontSize="Medium"/>
+
+            <CarouselView
+                Grid.Row="1"
+                ItemsSource="{Binding PopularAnimes}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            RowDefinitions="Auto, Auto">
+                            <Image
+                                Grid.Row="0"
+                                Source="{Binding CoverImageURL}"
+                                Aspect="AspectFill"
+                                HeightRequest="150"
+                                WidthRequest="150"/>
+
+                            <Label
+                                Grid.Row="1"
+                                Text="{Binding Titles.English}"/>
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <Label
+                Grid.Row="2"
+                Text="Seasonal"
+                FontSize="Medium"/>
+
+            <CarouselView
+                Grid.Row="3"
+                ItemsSource="{Binding SeasonalAnimes}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            RowDefinitions="Auto, Auto">
+                            <Image
+                                Grid.Row="0"
+                                Source="{Binding CoverImageURL}"
+                                Aspect="AspectFill"
+                                HeightRequest="150"
+                                WidthRequest="150"/>
+
+                            <Label
+                                Grid.Row="1"
+                                Text="{Binding Titles.English}"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <Label
+                Grid.Row="4"
+                Text="Song Suggestions"
+                FontSize="Medium"/>
+
+            <CarouselView
+                Grid.Row="5"
+                ItemsSource="{Binding SongSuggestions}">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            RowDefinitions="Auto, Auto">
+                            <Image
+                                Grid.Row="0"
+                                Source="{Binding CoverImageURL}"
+                                Aspect="AspectFill"
+                                HeightRequest="150"
+                                WidthRequest="150"/>
+
+                            <Label
+                                Grid.Row="1"
+                                Text="{Binding Titles.English}"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>
