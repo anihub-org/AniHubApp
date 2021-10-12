@@ -60,7 +60,7 @@ namespace AniHubApp.ViewModels
             var queryParams = new AnimeListQueryParams(Season.GetCurrentSeasonValue());
 
             var response = await _aniApiService.GetAnimesAsync(queryParams);
-            SeasonalAnimes = new ObservableCollection<Anime>(response.Data.Animes);
+           SeasonalAnimes = new ObservableCollection<Anime>(response.Data.Animes);
         }
 
         private async void GetSongSuggestions()
