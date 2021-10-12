@@ -36,13 +36,14 @@ namespace AniHubApp.Services
             return null;
         }
 
-        public async Task<AnimeListResponse> GetAnimesAsync()
+        public async Task<AnimeListResponse> GetAnimesAsync(AnimeListQueryParams queryParams = null)
         {
-            var response = await _aniApi.GetAnimesAsync();
+            var response = await _aniApi.GetAnimesAsync(queryParams);
 
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
+                Console.WriteLine(responseString);
 
                 var animeListResponse = _serializer.Deserialize<AnimeListResponse>(responseString);
 

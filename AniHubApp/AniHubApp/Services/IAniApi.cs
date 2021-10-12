@@ -9,7 +9,7 @@ namespace AniHubApp.Services
     public interface IAniApi
     {
         [Get(AnimeListPath)]
-        Task<HttpResponseMessage> GetAnimesAsync();
+        Task<HttpResponseMessage> GetAnimesAsync(AnimeListQueryParams queryParams);
         [Get(AnimeDetailPath)]
         Task<HttpResponseMessage> GetAnimeByIdAsync([AliasAs("id")] int animeId);
         [Get(AnimeSongsListPath)]
