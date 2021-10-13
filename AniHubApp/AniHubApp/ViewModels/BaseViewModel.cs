@@ -10,12 +10,10 @@ namespace AniHubApp.ViewModels
     public abstract class BaseViewModel : INotifyPropertyChanged
     {
         protected INavigationService NavigationService { get; }
-        protected IAniApiService AniApiService { get; }
 
-        public BaseViewModel(INavigationService navigationService, IAniApiService aniApiService)
+        public BaseViewModel(INavigationService navigationService)
         {
             NavigationService = navigationService;
-            AniApiService = aniApiService;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

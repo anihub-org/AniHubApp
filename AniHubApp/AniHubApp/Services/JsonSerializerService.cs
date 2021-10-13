@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 using System.Text.Json;
+using Newtonsoft.Json;
+
 
 namespace AniHubApp.Services
 {
@@ -9,12 +11,12 @@ namespace AniHubApp.Services
     {
         public string SerializeObject<T> (T payload)
         {
-            return JsonSerializer.Serialize(payload);
+            return JsonConvert.SerializeObject(payload);
         }
 
         public T Deserialize<T> (string payload)
         {
-            return JsonSerializer.Deserialize<T>(payload);
+            return JsonConvert.DeserializeObject<T>(payload);
         }
     }
 }

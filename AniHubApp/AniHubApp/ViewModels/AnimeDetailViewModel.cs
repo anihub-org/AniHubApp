@@ -8,7 +8,7 @@ namespace AniHubApp.ViewModels
 {
     public class AnimeDetailViewModel : BaseViewModel
     {
-        public AnimeDetailViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService, aniApiService)
+        public AnimeDetailViewModel(INavigationService navigationService, IAniApiService aniApiService) : base(navigationService)
         {
 
         }
