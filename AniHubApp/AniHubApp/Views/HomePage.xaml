@@ -4,7 +4,8 @@
             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
             xmlns:prism="http://prismlibrary.com"
             Title="Home"
-             NavigationPage.HasNavigationBar="False">
+             NavigationPage.HasNavigationBar="False"
+             FlowDirection="LeftToRight">
     <ContentPage.Content>
         <Grid
             RowDefinitions="Auto, 230, Auto, 230, Auto, 100"
@@ -86,13 +87,13 @@
                         <Frame
                             BorderColor="Black">
                             <Grid
-                            RowDefinitions="Auto"
+                                RowDefinitions="Auto"
                                 Padding="10">
 
                                 <Label
-                                Grid.Row="1"
-                                Text="{Binding Title}"
-                                HorizontalTextAlignment="Center"
+                                    Grid.Row="1"
+                                    Text="{Binding Title}"
+                                    HorizontalTextAlignment="Center"
                                     VerticalTextAlignment="Center"/>
 
                             </Grid>

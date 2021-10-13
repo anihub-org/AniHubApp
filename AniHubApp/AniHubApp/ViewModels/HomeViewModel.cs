@@ -30,8 +30,8 @@ namespace AniHubApp.ViewModels
 
         public void Initialize(INavigationParameters parameters)
         {
-            GetSeasonalAnimes();
             GetPopularAnimes();
+            GetSeasonalAnimes();
             GetSongSuggestions();
         }
 
@@ -45,7 +45,7 @@ namespace AniHubApp.ViewModels
 
             var response = await _aniApiService.GetAnimesAsync();
 
-            var popularAnimes = response.Data.Animes.Where(anime => anime.Score >= BASE_POPULAR_ANIME_SCORE);
+            var popularAnimes = response.Data.Animes.GetRange(0,10).Where(anime => anime.Score >= BASE_POPULAR_ANIME_SCORE);
             PopularAnimes = new ObservableCollection<Anime>(popularAnimes);
         }
 
@@ -57,10 +57,10 @@ namespace AniHubApp.ViewModels
                 return;
             }
 
-            var queryParams = new AnimeListQueryParams(Season.GetCurrentSeasonValue());
+            var queryParams = new AnimeListQueryParams(season: Season.GetCurrentSeasonValue());
 
             var response = await _aniApiService.GetAnimesAsync(queryParams);
-           SeasonalAnimes = new ObservableCollection<Anime>(response.Data.Animes);
+           SeasonalAnimes = new ObservableCollection<Anime>(response.Data.Animes.GetRange(0, 10));
         }
 
         private async void GetSongSuggestions()
@@ -71,10 +71,10 @@ namespace AniHubApp.ViewModels
                 return;
             }
 
-            var queryParams = new AnimeSongsListQueryParams(Season.GetCurrentSeasonValue());
+            var queryParams = new AnimeSongsListQueryParams(season: Season.GetCurrentSeasonValue());
 
             var response = await _aniApiService.GetAnimeSongsAsync(queryParams);
-            SongSuggestions = new ObservableCollection<Song>(response.Data.Songs);
+            SongSuggestions = new ObservableCollection<Song>(response.Data.Songs.GetRange(0, 10));
         }
 
         private async void ShowNetworkConnectionError()
