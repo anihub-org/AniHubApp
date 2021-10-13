@@ -30,6 +30,5 @@ namespace AniHubApp
 
             containerRegistry.RegisterInstance<IAniApiService>(new AniApiService(new JsonSerializerService()));
         }
-
     }
 }

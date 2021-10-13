@@ -1,13 +1,106 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage
-    x:Class="AniHubApp.Views.HomePage"
-    xmlns="http://xamarin.com/schemas/2014/forms"
-    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:prism="http://prismlibrary.com"
-    Title="Home">
+<ContentPage x:Class="AniHubApp.Views.HomePage"
+            xmlns="http://xamarin.com/schemas/2014/forms"
+            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+            xmlns:prism="http://prismlibrary.com"
+            Title="Home"
+             NavigationPage.HasNavigationBar="False"
+             FlowDirection="LeftToRight">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="This is the Home Page" FontSize="Large" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <Grid
+            RowDefinitions="Auto, 230, Auto, 230, Auto, 100"
+            Padding="10"
+            VerticalOptions="End">
+
+            <Label
+                Grid.Row="0"
+                Text="Popular"
+                FontSize="Medium"/>
+
+            <CarouselView
+                Grid.Row="1"
+                ItemsSource="{Binding PopularAnimes}"
+                PeekAreaInsets="110">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            RowDefinitions="Auto, Auto"
+                            Padding="0, 10">
+                            <Image
+                                Grid.Row="0"
+                                Source="{Binding CoverImageURL}"
+                                Aspect="AspectFit"
+                                HeightRequest="150"
+                                WidthRequest="150"/>
+
+                            <Label
+                                Grid.Row="1"
+                                Text="{Binding Titles.English}"
+                                HorizontalTextAlignment="Center"/>
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <Label
+                Grid.Row="2"
+                Text="Seasonal"
+                FontSize="Medium"/>
+
+            <CarouselView
+                Grid.Row="3"
+                ItemsSource="{Binding SeasonalAnimes}"
+                PeekAreaInsets="110">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid
+                            RowDefinitions="Auto, Auto"
+                            Padding="0, 10">
+                            <Image
+                                Grid.Row="0"
+                                Source="{Binding CoverImageURL}"
+                                Aspect="AspectFit"
+                                HeightRequest="150"
+                                WidthRequest="150"/>
+
+                            <Label
+                                Grid.Row="1"
+                                Text="{Binding Titles.English}"
+                                HorizontalTextAlignment="Center"/>
+
+                        </Grid>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <Label
+                Grid.Row="4"
+                Text="Song Suggestions"
+                FontSize="Medium"/>
+
+            <CarouselView
+                Grid.Row="5"
+                ItemsSource="{Binding SongSuggestions}"
+                PeekAreaInsets="110">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame
+                            BorderColor="Black">
+                            <Grid
+                                RowDefinitions="Auto"
+                                Padding="10">
+
+                                <Label
+                                    Grid.Row="1"
+                                    Text="{Binding Title}"
+                                    HorizontalTextAlignment="Center"
+                                    VerticalTextAlignment="Center"/>
+
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

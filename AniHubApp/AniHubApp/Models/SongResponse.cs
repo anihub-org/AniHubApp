@@ -1,47 +1,45 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using Newtonsoft.Json;
 using System.Text.Json.Serialization;
 
 namespace AniHubApp.Models
 {
     public class SongResponse
     {
-        [JsonPropertyName("status_code")]
+        [JsonProperty("status_code")]
         public int StatusCode { get; set; }
-        [JsonPropertyName("message")]
+        [JsonProperty("message")]
         public string Message { get; set; }
-        [JsonPropertyName("data")]
+        [JsonProperty("data")]
         public Song Data { get; set; }
-        [JsonPropertyName("version")]
+        [JsonProperty("version")]
         public string Version { get; set; }
     }
 
     public class Song
     {
-        [JsonPropertyName("id")]
+        [JsonProperty("id")]
         public int ID { get; set; }
-        [JsonPropertyName("anime_id")]
+        [JsonProperty("anime_id")]
         public int AnimeID { get; set; }
-        [JsonPropertyName("title")]
+        [JsonProperty("title")]
         public string Title { get; set; }
-        [JsonPropertyName("artist")]
+        [JsonProperty("artist")]
         public string Artist { get; set; }
-        [JsonPropertyName("album")]
+        [JsonProperty("album")]
         public string Album { get; set; }
-        [JsonPropertyName("year")]
+        [JsonProperty("year")]
         public int Year { get; set; }
-        [JsonPropertyName("season")]
+        [JsonProperty("season")]
         public int Season { get; set; }
-        [JsonPropertyName("duration")]
+        [JsonProperty("duration")]
         public string DurationInMilliseconds { get; set; }
-        [JsonPropertyName("preview_url")]
+        [JsonProperty("preview_url")]
         public string PreviewURL { get; set; }
-        [JsonPropertyName("open_spotify_url")]
+        [JsonProperty("open_spotify_url")]
         public string OpenSpotifyURL { get; set; }
-        [JsonPropertyName("local_spotify_url")]
+        [JsonProperty("local_spotify_url")]
         public string LocalSpotifyURL { get; set; }
-        [JsonPropertyName("type")]
+        [JsonProperty("type")]
         public string Type { get; set; }
     }
 }

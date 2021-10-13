@@ -1,75 +1,72 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
-using System.Text;
-using System.Text.Json.Serialization;
 
 namespace AniHubApp.Models
 {
     public class AnimeResponse
     {
-        [JsonPropertyName("status_code")]
+        [JsonProperty("status_code")]
         public int StatusCode { get; set; }
-        [JsonPropertyName("message")]
+        [JsonProperty("message")]
         public string Message { get; set; }
-        [JsonPropertyName("data")]
+        [JsonProperty("data")]
         public Anime Data { get; set; }
-        [JsonPropertyName("version")]
+        [JsonProperty("version")]
         public string Version { get; set; }
     }
 
     public class Anime
     {
-        [JsonPropertyName("id")]
+        [JsonProperty("id")]
         public int AnimeID { get; set; }
-        [JsonPropertyName("anilist_id")]
+        [JsonProperty("anilist_id")]
         public int AnilistID { get; set; }
-        [JsonPropertyName("mal_id")]
+        [JsonProperty("mal_id")]
         public int MyAnimeListID { get; set; }
-        [JsonPropertyName("format")]
+        [JsonProperty("format")]
         public int Format { get; set; }
-        [JsonPropertyName("titles")]
+        [JsonProperty("status")]
+        public int Status { get; set; }
+        [JsonProperty("titles")]
         public Titles Titles { get; set; }
-        [JsonPropertyName("descriptions")]
+        [JsonProperty("descriptions")]
         public Descriptions Descriptions { get; set; }
-        [JsonPropertyName("start_date")]
+        [JsonProperty("start_date")]
         public DateTime StartDate { get; set; }
-        [JsonPropertyName("end_date")]
+        [JsonProperty("end_date")]
         public DateTime EndDate { get; set; }
-        [JsonPropertyName("season_period")]
+        [JsonProperty("season_period")]
         public int SeasonPeriod { get; set; }
-        [JsonPropertyName("season_year")]
+        [JsonProperty("season_year")]
         public int SeasonYear { get; set; }
-        [JsonPropertyName("episodes_count")]
+        [JsonProperty("episodes_count")]
         public int EpisodesCount { get; set; }
-        [JsonPropertyName("episode_duration")]
+        [JsonProperty("episode_duration")]
         public int EpisodeDuration { get; set; }
-        [JsonPropertyName("cover_image")]
+        [JsonProperty("cover_image")]
         public string CoverImageURL { get; set; }
-        [JsonPropertyName("cover_color")]
+        [JsonProperty("cover_color")]
         public string CoverHexColor { get; set; }
-        [JsonPropertyName("banner_image")]
+        [JsonProperty("banner_image")]
         public string BannerImageURL { get; set; }
-        [JsonPropertyName("genres")]
-        public string[] Genres { get; set; }
-        [JsonPropertyName("score")]
+        [JsonProperty("genres")]
+        public List<string> Genres { get; set; }
+        [JsonProperty("score")]
         public int Score { get; set; }
     }
 
     public class Titles
     {
-        [JsonPropertyName("en")]
+        [JsonProperty("en")]
         public string English { get; set; }
-        [JsonPropertyName("jp")]
-        public string Japanese { get; set; }
-        [JsonPropertyName("it")]
-        public string Italian { get; set; }
     }
 
     public class Descriptions
     {
-        [JsonPropertyName("en")]
+        [JsonProperty("en")]
         public string English { get; set; }
-        [JsonPropertyName("it")]
+        [JsonProperty("it")]
         public string Italian { get; set; }
     }
 }
