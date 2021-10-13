@@ -5,7 +5,7 @@
             xmlns:prism="http://prismlibrary.com"
             Title="Home"
              NavigationPage.HasNavigationBar="False"
-             FlowDirection="LeftToRight">
+             x:Name="Homepage">
     <ContentPage.Content>
         <Grid
             RowDefinitions="Auto, 230, Auto, 230, Auto, 100"
@@ -25,7 +25,8 @@
                     <DataTemplate>
                         <Grid
                             RowDefinitions="Auto, Auto"
-                            Padding="0, 10">
+                            Padding="0, 10"
+                            Background="Red">
                             <Image
                                 Grid.Row="0"
                                 Source="{Binding CoverImageURL}"
@@ -37,6 +38,12 @@
                                 Grid.Row="1"
                                 Text="{Binding Titles.English}"
                                 HorizontalTextAlignment="Center"/>
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Command="{Binding Source={x:Reference Homepage}, Path=BindingContext.NavigateToAnimeDetailCommand}"
+                                    CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>
                         </Grid>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
@@ -68,6 +75,11 @@
                                 Text="{Binding Titles.English}"
                                 HorizontalTextAlignment="Center"/>
 
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    Command="{Binding Source={x:Reference Homepage}, Path=BindingContext.NavigateToAnimeDetailCommand}"
+                                    CommandParameter="{Binding .}"/>
+                            </Grid.GestureRecognizers>
                         </Grid>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>

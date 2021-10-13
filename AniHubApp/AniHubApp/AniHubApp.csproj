@@ -20,6 +20,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Views\AnimeDetailPage.xaml.cs">
+      <DependentUpon>AnimeDetailPage.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Views\FavoritesPage.xaml.cs">
       <DependentUpon>FavoritesPage.xaml</DependentUpon>
     </Compile>
