@@ -7,7 +7,7 @@
     Title="Search">
     <ContentPage.Content>
         <StackLayout>
-            <Frame Padding="15" Margin="7">
+            <Frame Padding="15" Margin="7" Grid.Row="0">
                 <StackLayout Orientation="Horizontal">
                     <Image Source="searchIcon.xml"/>
                     <Label 
@@ -18,7 +18,23 @@
                         VerticalOptions="Center"/>
                 </StackLayout>
             </Frame>
-            <Label Text="This is the Search Page" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <CollectionView ItemsSource="{Binding AnimeGenres}" SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions="Auto,Auto">
+                            <Frame BackgroundColor="LightGray" CornerRadius="10" Margin="4">
+                                <StackLayout>
+                                    <Image Source="{Binding CoverImageURL}" Grid.Row="0" WidthRequest="200" HeightRequest="250"/>
+                                    <Label Text="{Binding Name}" TextColor="Black" Grid.Row="1" HorizontalTextAlignment="Center"/>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
