@@ -43,7 +43,6 @@ namespace AniHubApp.Services
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
-                Console.WriteLine(responseString);
 
                 var animeListResponse = _serializer.Deserialize<AnimeListResponse>(responseString);
 

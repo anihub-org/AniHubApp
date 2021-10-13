@@ -4,19 +4,15 @@ namespace AniHubApp.Models
 {
     public class AnimeSongsListQueryParams
     {
-        public AnimeSongsListQueryParams(int season)
+        public AnimeSongsListQueryParams(int? season = null, string animeId = null)
         {
             SeasonPeriod = season;
-        }
-
-        public AnimeSongsListQueryParams(string animeId = null)
-        {
             AnimeId = animeId;
         }
 
         [AliasAs("anime_id")]
         public string AnimeId { get; }
         [AliasAs("season")]
-        public int SeasonPeriod { get; }
+        public int? SeasonPeriod { get; }
     }
 }
