@@ -3,7 +3,15 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AniHubApp.Views.AnimeSongsListPage"
              x:Name="AnimeSongPage"
-             Title="Songs">
+             Title="Songs"
+             xmlns:converter="clr-namespace:AniHubApp.Converters">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converter:TimeFormatConverter x:Key="TimeFormatConverter"/>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    
     <CollectionView ItemsSource="{Binding AnimeSongs}">
         <CollectionView.ItemTemplate>
             <DataTemplate>
@@ -30,8 +38,14 @@
                             Grid.Column="0"
                             Text="{Binding Year}"/>
 
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Text="{Binding DurationInMilliseconds, Converter={StaticResource TimeFormatConverter}}"/>
+
                         <Button
                             Grid.Row="0"
+                            Grid.RowSpan="2"
                             Grid.Column="1"
                             Background="Blue"
                             Text="Tap"
