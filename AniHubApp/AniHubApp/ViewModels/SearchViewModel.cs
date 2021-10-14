@@ -7,7 +7,9 @@ using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Text;
+using System.Windows.Input;
 using Xamarin.Essentials;
+using Xamarin.Forms;
 
 namespace AniHubApp.ViewModels
 {
@@ -28,31 +30,41 @@ namespace AniHubApp.ViewModels
             new AnimeGenre("Romance", "FruitsBasket.jpg")
         };
 
+        private AnimeGenre _selectedAnimeGenre;
+        public AnimeGenre SelectAnimeGenre
+        {
+            get
+            {
+                return _selectedAnimeGenre;
+            }
+            set
+            {
+                _selectedAnimeGenre = value;
+                if (_selectedAnimeGenre != null)
+                {
+                    SelectedAnimeGenreCommand.Execute(_selectedAnimeGenre);
+                }
+            }
+        }
+        public ICommand SelectedAnimeGenreCommand { get; }
+
         private IAniApiService _aniApiService;
         private IPageDialogService _pageDialogService;
         public SearchViewModel(INavigationService navigationService, IAniApiService aniApiService, IPageDialogService pageDialogService) : base(navigationService)
         {
             _pageDialogService = pageDialogService;
             _aniApiService = aniApiService;
+            SelectedAnimeGenreCommand = new Command<AnimeGenre>(OnAnimeGenreSelected);
         }
 
-        //public void Initialize(INavigationParameters parameters)
-        //{
-        //    AnimeGenres.Add("Action");
-        //    AnimeGenres.Add("Adventure");
-        //    AnimeGenres.Add("Comedy");
-        //    AnimeGenres.Add("Fantasy");
-        //    AnimeGenres.Add("Horror");
-        //    AnimeGenres.Add("Mecha");
-        //    AnimeGenres.Add("Music");
-        //    AnimeGenres.Add("Slice Of Life");
-        //    AnimeGenres.Add("Sports");
-        //    AnimeGenres.Add("Romance");
-        //}
-
-        private async void ShowNetworkConnectionError()
+        private async void OnAnimeGenreSelected(AnimeGenre animeGenre)
         {
-            await _pageDialogService.DisplayAlertAsync("Error", "Missing network connection. Try again later", "Ok");
+            var parameters = new NavigationParameters
+            {
+                {"genre", animeGenre }
+            };
+
+            await NavigationService.NavigateAsync($"{NavigationConstants.Paths.SearchDetailPage}", parameters);
         }
     }
 }
