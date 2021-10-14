@@ -5,7 +5,55 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is the Anime Detail Page"/>
+            <Image
+                Margin="0"
+                Aspect="AspectFill"
+                HeightRequest="200"
+                Source="{Binding Anime.BannerImageURL}" />
+            <Label
+                Margin="10,0,0,0"
+                FontAttributes="Bold"
+                FontSize="Large"
+                Text="{Binding Anime.Titles.English}" />
+            <Label Margin="10,0,0,0" Text="{Binding Anime.SeasonYear}" />
+            <CollectionView
+                HeightRequest="60"
+                ItemsLayout="HorizontalList"
+                ItemsSource="{Binding Anime.Genres}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout Padding="10">
+                            <Frame
+                                Padding="10"
+                                BackgroundColor="Gray"
+                                CornerRadius="20">
+                                <Label Text="{Binding .}" TextColor="White" />
+                            </Frame>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label
+                Margin="10,0,10,0"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                Text="Description" />
+            <Label
+                Margin="10,0,10,0"
+                HeightRequest="100"
+                Text="{Binding Anime.Descriptions.English}"
+                TextType="Html" />
+            <Button
+                Margin="10"
+                BackgroundColor="{Binding IsFavoriteColor}"
+                Command="{Binding FavoriteCommand}"
+                CornerRadius="20"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                HeightRequest="70"
+                Text="{Binding IsFavoriteText}"
+                TextColor="{Binding IsFavoriteTextColor}"
+                VerticalOptions="EndAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
