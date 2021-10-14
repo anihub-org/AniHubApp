@@ -26,6 +26,7 @@ namespace AniHubApp
             containerRegistry.RegisterForNavigation<ContainerTabbedPage>(NavigationConstants.Paths.ContainerTabbedPage);
             containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>(NavigationConstants.Paths.HomePage);
             containerRegistry.RegisterForNavigation<SearchPage, SearchViewModel>(NavigationConstants.Paths.SearchPage);
+            containerRegistry.RegisterForNavigation<SearchDetailPage, SearchDetailViewModel>(NavigationConstants.Paths.SearchDetailPage);
             containerRegistry.RegisterForNavigation<FavoritesPage, FavoritesViewModel>(NavigationConstants.Paths.FavoritesPage);
 
             containerRegistry.RegisterInstance<IAniApiService>(new AniApiService(new JsonSerializerService()));

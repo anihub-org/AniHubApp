@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AniHubApp.Views.SearchDetailPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding AnimeSpecificGenre.Name}" HorizontalOptions="Center" FontSize="Large" TextColor="Black"/>
+            <CollectionView ItemsSource="{Binding AnimesByGenre}" SelectionMode="Single">
+                <CollectionView.ItemsLayout>
+                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                </CollectionView.ItemsLayout>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid RowDefinitions="Auto,Auto">
+                            <Frame BackgroundColor="LightGray" CornerRadius="10" Margin="4">
+                                <StackLayout>
+                                    <Image Source="{Binding CoverImageURL}" WidthRequest="200" HeightRequest="250" Grid.Row="0"/>
+                                    <Label Text="{Binding Titles.English}" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="1"/>
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

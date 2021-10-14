@@ -13,6 +13,7 @@ namespace AniHubApp
             public const string ContainerTabbedPage = "ContainerTabbed";
             public const string HomePage = "Home";
             public const string SearchPage = "Search";
+            public const string SearchDetailPage = "SearchDeatil";
             public const string FavoritesPage = "Favorites";
             public const string AnimeDetailPage = "AnimeDetail";
             public const string AnimeSongListPage = "AnimeSongList";
