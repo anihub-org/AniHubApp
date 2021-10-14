@@ -1,12 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AniHubApp.Views.AnimeSongsListPage">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+             x:Class="AniHubApp.Views.AnimeSongsListPage"
+             x:Name="AnimeSongPage"
+             Title="Songs">
+    <CollectionView ItemsSource="{Binding AnimeSongs}">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <Frame BorderColor="LightGray">
+                    <Grid
+                        RowDefinitions="Auto, Auto, Auto"
+                        ColumnDefinitions="*, Auto"
+                        RowSpacing="0">
+
+                        <Label
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            Text="{Binding Title}"
+                            FontSize="Body"
+                            FontAttributes="Bold"/>
+
+                        <Label
+                            Grid.Row="1"
+                            Grid.Column="0"
+                            Text="{Binding Artist}"/>
+
+                        <Label
+                            Grid.Row="2"
+                            Grid.Column="0"
+                            Text="{Binding Year}"/>
+
+                        <Button
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            Background="Blue"
+                            Text="Tap"
+                            TextColor="White"
+                            Command="{Binding Source={x:Reference AnimeSongPage}, Path=BindingContext.RedirectToSpotifyCommand}"
+                            CommandParameter="{Binding OpenSpotifyURL}"/>
+
+                    </Grid>
+                </Frame>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>
