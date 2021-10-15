@@ -10,9 +10,9 @@ using Xamarin.Forms.Xaml;
 namespace AniHubApp.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class SearchDetailPage : ContentPage
+    public partial class SearchAnimeByGenrePage : ContentPage
     {
-        public SearchDetailPage()
+        public SearchAnimeByGenrePage()
         {
             InitializeComponent();
         }

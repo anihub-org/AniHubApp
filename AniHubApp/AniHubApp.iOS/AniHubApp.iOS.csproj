@@ -137,10 +137,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\searchIcon.svg" />
-  </ItemGroup>
-  <ItemGroup>
-    <BundleResource Include="Resources\searchIcon.xml" />
+    <BundleResource Include="Resources\searchIconSmall.xml" />
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\Anohana.jpg" />
@@ -171,5 +168,8 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\YourLieInApril.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\searchIcon48dp.png" />
   </ItemGroup>
 </Project>

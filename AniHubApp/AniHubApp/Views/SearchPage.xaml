@@ -9,13 +9,16 @@
         <StackLayout>
             <Frame Padding="15" Margin="7" Grid.Row="0">
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="searchIcon.svg"/>
+                    <Image Source="searchIconSmall.xml"/>
                     <Label 
                         Text="Anime" 
                         TextColor="Black"
                         FontSize="Medium"
                         Margin="0" 
                         VerticalOptions="Center"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Command="{Binding NavigateToSearchAnimeByName}"/>
+                    </StackLayout.GestureRecognizers>
                 </StackLayout>
             </Frame>
             <CollectionView ItemsSource="{Binding AnimeGenres}" SelectedItem="{Binding SelectAnimeGenre}" SelectionMode="Single">
