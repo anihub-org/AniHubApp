@@ -13,9 +13,8 @@ using Xamarin.Forms;
 
 namespace AniHubApp.ViewModels
 {
-    public class SearchViewModel : BaseViewModel, INotifyPropertyChanged
+    public class SearchViewModel : BaseViewModel
     {
-        public event PropertyChangedEventHandler PropertyChanged;
         public ObservableCollection<AnimeGenre> AnimeGenres { get; set; } = new ObservableCollection<AnimeGenre>()
         {
             new AnimeGenre("Action", "FullMetalAlchemistBrotherhood.jpg"),
@@ -47,6 +46,7 @@ namespace AniHubApp.ViewModels
             }
         }
         public ICommand SelectedAnimeGenreCommand { get; }
+        public ICommand NavigateToSearchAnimeByName { get; }
 
         private IAniApiService _aniApiService;
         private IPageDialogService _pageDialogService;
@@ -55,6 +55,12 @@ namespace AniHubApp.ViewModels
             _pageDialogService = pageDialogService;
             _aniApiService = aniApiService;
             SelectedAnimeGenreCommand = new Command<AnimeGenre>(OnAnimeGenreSelected);
+            NavigateToSearchAnimeByName = new Command(OnSearchFrameSelected);
+        }
+
+        private async void OnSearchFrameSelected()
+        {
+            await NavigationService.NavigateAsync($"{NavigationConstants.Paths.SearchAnimeByNamePage}");
         }
 
         private async void OnAnimeGenreSelected(AnimeGenre animeGenre)
@@ -64,7 +70,7 @@ namespace AniHubApp.ViewModels
                 {"genre", animeGenre }
             };
 
-            await NavigationService.NavigateAsync($"{NavigationConstants.Paths.SearchDetailPage}", parameters);
+            await NavigationService.NavigateAsync($"{NavigationConstants.Paths.SearchAnimeByGenrePage}", parameters);
         }
     }
 }
