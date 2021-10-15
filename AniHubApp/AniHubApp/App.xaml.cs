@@ -16,7 +16,7 @@ namespace AniHubApp
         protected override void OnInitialized()
         {
             InitializeComponent();
-            NavigationService.NavigateAsync($"{NavigationConstants.Paths.Navigation}/{NavigationConstants.Paths.MainPage}");
+            NavigationService.NavigateAsync($"{NavigationConstants.Paths.MainPage}");
         }
 
         protected override void RegisterTypes(IContainerRegistry containerRegistry)
@@ -28,6 +28,7 @@ namespace AniHubApp
             containerRegistry.RegisterForNavigation<SearchPage, SearchViewModel>(NavigationConstants.Paths.SearchPage);
             containerRegistry.RegisterForNavigation<SearchDetailPage, SearchDetailViewModel>(NavigationConstants.Paths.SearchDetailPage);
             containerRegistry.RegisterForNavigation<FavoritesPage, FavoritesViewModel>(NavigationConstants.Paths.FavoritesPage);
+            containerRegistry.RegisterForNavigation<AnimeDetailPage, AnimeDetailViewModel>(NavigationConstants.Paths.AnimeDetailPage);
 
             containerRegistry.RegisterInstance<IAniApiService>(new AniApiService(new JsonSerializerService()));
         }

@@ -1,9 +1,12 @@
 ﻿using AniHubApp.Models;
+using MonkeyCache.FileStore;
 using Refit;
 using System;
 using System.Collections.Generic;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
+using Xamarin.Essentials;
 using static AniHubApp.Configuration;
 
 namespace AniHubApp.Services
@@ -11,7 +14,6 @@ namespace AniHubApp.Services
     public class AniApiService: IAniApiService
     {
         private IAniApi _aniApi;
-
         private IJsonSerializerService _serializer;
 
         public AniApiService(IJsonSerializerService jsonSerializerService)

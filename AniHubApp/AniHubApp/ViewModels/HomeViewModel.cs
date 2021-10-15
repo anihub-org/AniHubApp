@@ -8,6 +8,8 @@ using System.Text;
 using Xamarin.Essentials;
 using System.Linq;
 using Prism.Services;
+using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace AniHubApp.ViewModels
 {
@@ -22,10 +24,14 @@ namespace AniHubApp.ViewModels
         private IAniApiService _aniApiService;
         private IPageDialogService _pageDialogService;
 
+        public ICommand NavigateToAnimeDetailCommand { get; set; }
+
         public HomeViewModel(INavigationService navigationService, IAniApiService aniApiService, IPageDialogService pageDialogService) : base(navigationService)
         {
             _pageDialogService = pageDialogService;
             _aniApiService = aniApiService;
+
+            NavigateToAnimeDetailCommand = new Command<Anime>(OnSelectedAnime);
         }
 
         public void Initialize(INavigationParameters parameters)
@@ -33,6 +39,16 @@ namespace AniHubApp.ViewModels
             GetPopularAnimes();
             GetSeasonalAnimes();
             GetSongSuggestions();
+        }
+
+        private async void OnSelectedAnime(Anime anime)
+        {
+            var parameters = new NavigationParameters
+            {
+                {"anime", anime }
+            };
+
+            await NavigationService.NavigateAsync($"{NavigationConstants.Paths.AnimeDetailPage}", parameters);
         }
 
         private async void GetPopularAnimes()

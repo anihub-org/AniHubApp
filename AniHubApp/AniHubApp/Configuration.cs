@@ -15,5 +15,7 @@ namespace AniHubApp
             public const string AnimeSongsListPath = "/v1/song";
             public const string AnimeSongDetailPath = "/v1/song/{id}";
         }
+
+        public const string CacheApplicationId = "AniHubAppCache";
     }
 }
