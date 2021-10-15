@@ -7,7 +7,30 @@
     Title="Favorites">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="This is the Favorites Page" FontSize="Large" HorizontalOptions="Center" VerticalOptions="Center"/>
+            <Label Text="Favorites" />
+            <CollectionView Grid.Row="1" ItemsSource="{Binding FavoriteAnimes}">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid Padding="0,10" RowDefinitions="Auto, Auto">
+                            <Image
+                                Grid.Row="0"
+                                Aspect="AspectFit"
+                                HeightRequest="150"
+                                Source="{Binding CoverImageURL}"
+                                WidthRequest="150" />
+
+                            <Label
+                                Grid.Row="1"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Titles.English}" />
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference Homepage}, Path=BindingContext.NavigateToAnimeDetailCommand}" CommandParameter="{Binding .}" />
+                            </Grid.GestureRecognizers>
+                        </Grid>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

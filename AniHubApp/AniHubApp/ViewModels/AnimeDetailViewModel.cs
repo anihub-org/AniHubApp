@@ -43,11 +43,11 @@ namespace AniHubApp.ViewModels
         {
             if (Anime.Favorite)
             {
-                ChangeFavorite(false);
+                ChangeFavorite(Anime, false);
             }
             else
             {
-                ChangeFavorite(true);
+                ChangeFavorite(Anime, true);
             }
         }
 
@@ -58,29 +58,29 @@ namespace AniHubApp.ViewModels
             Anime = parameters.GetValue<Anime>("anime");
             if (Anime.Favorite)
             {
-                ChangeFavorite(true);
+                ChangeFavorite(Anime, true);
             }
         }
 
-        private void ChangeFavorite(bool isFavorite)
+        private void ChangeFavorite(Anime anime, bool isFavorite)
         {
             if (isFavorite)
             {
-                Anime.Favorite = true;
+                anime.Favorite = true;
                 IsFavoriteColor = Color.Goldenrod;
                 IsFavoriteTextColor = Color.White;
                 IsFavoriteText = "Favorited";
-                FavoritesViewModel.FavoriteAnimes.Add(Anime);
+                FavoritesViewModel.FavoriteAnimes.Add(anime);
                 string payload = _jsonSerializer.SerializeObject(FavoritesViewModel.FavoriteAnimes);
                 Preferences.Set("favorites", payload);
             }
             else
             {
-                Anime.Favorite = false;
+                anime.Favorite = false;
                 IsFavoriteColor = Color.LightGray;
                 IsFavoriteTextColor = Color.Black;
                 IsFavoriteText = "Favorite";
-                FavoritesViewModel.FavoriteAnimes.Remove(Anime);
+                FavoritesViewModel.FavoriteAnimes.Remove(anime);
                 string payload = _jsonSerializer.SerializeObject(FavoritesViewModel.FavoriteAnimes);
                 Preferences.Set("favorites", payload);
             }
