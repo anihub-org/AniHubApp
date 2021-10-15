@@ -136,4 +136,40 @@
       <Name>AniHubApp</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\searchIconSmall.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Anohana.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\CodeGeass.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FruitsBasket.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\FullMetalAlchemistBrotherhood.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Haikyu.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\OnePiece.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Saiki.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TheSevenDeadlySins.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\TokyoGhoul.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\YourLieInApril.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\searchIcon48dp.png" />
+  </ItemGroup>
 </Project>
