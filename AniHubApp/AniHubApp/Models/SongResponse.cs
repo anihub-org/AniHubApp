@@ -32,7 +32,7 @@ namespace AniHubApp.Models
         [JsonProperty("season")]
         public int Season { get; set; }
         [JsonProperty("duration")]
-        public string DurationInMilliseconds { get; set; }
+        public int DurationInMilliseconds { get; set; }
         [JsonProperty("preview_url")]
         public string PreviewURL { get; set; }
         [JsonProperty("open_spotify_url")]
