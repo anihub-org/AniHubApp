@@ -7,7 +7,7 @@
     Title="Favorites">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Favorites" />
+            <Label Text="Favorites" FontSize="Large" HorizontalOptions="Center" TextColor="Black" Margin="0,20,0,0"/>
             <CollectionView Grid.Row="1" ItemsSource="{Binding FavoriteAnimes}">
                 <CollectionView.ItemTemplate>
                     <DataTemplate>

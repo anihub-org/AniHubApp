@@ -17,7 +17,7 @@ namespace AniHubApp.ViewModels
         public static ObservableCollection<Anime> FavoriteAnimes { get; set; } = new ObservableCollection<Anime>();
         public ICommand NavigateToAnimeDetailCommand { get; set; }
         private JsonSerializerService _jsonSerializer { get; set; }
-        public bool IsActive { get => throw new NotImplementedException(); set => throw new NotImplementedException(); }
+        public bool IsActive { get; set ; }
 
         public FavoritesViewModel(INavigationService navigationService) : base(navigationService)
         {
