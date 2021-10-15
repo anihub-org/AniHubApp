@@ -11,7 +11,10 @@ namespace AniHubApp.ViewModels
     public class MainViewModel : BaseViewModel
     {
         public ICommand NavigateToHomePageCommand { get; }
-        private async void OnNavigation() => await NavigationService?.NavigateAsync($"/{NavigationConstants.Paths.ContainerTabbedPage}");
+        private async void OnNavigation() 
+        {
+            await NavigationService?.NavigateAsync($"/{NavigationConstants.Paths.Navigation}/{NavigationConstants.Paths.ContainerTabbedPage}");
+        } 
 
         public MainViewModel(INavigationService navigationService) : base(navigationService)
         {
