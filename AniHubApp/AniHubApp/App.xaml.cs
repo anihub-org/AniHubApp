@@ -25,7 +25,9 @@ namespace AniHubApp
             containerRegistry.RegisterForNavigation<MainPage, MainViewModel>(NavigationConstants.Paths.MainPage);
             containerRegistry.RegisterForNavigation<ContainerTabbedPage>(NavigationConstants.Paths.ContainerTabbedPage);
             containerRegistry.RegisterForNavigation<HomePage, HomeViewModel>(NavigationConstants.Paths.HomePage);
-            containerRegistry.RegisterForNavigation<SearchPage, SearchViewModel>(NavigationConstants.Paths.SearchPage);
+            containerRegistry.RegisterForNavigation<SearchPage, SearchViewModel>(NavigationConstants.Paths.SearchPage); 
+            containerRegistry.RegisterForNavigation<SearchAnimeByGenrePage, SearchAnimeByGenreViewModel>(NavigationConstants.Paths.SearchAnimeByGenrePage);
+            containerRegistry.RegisterForNavigation<SearchAnimeByNamePage, SearchAnimeByNameViewModel>(NavigationConstants.Paths.SearchAnimeByNamePage);
             containerRegistry.RegisterForNavigation<FavoritesPage, FavoritesViewModel>(NavigationConstants.Paths.FavoritesPage);
             containerRegistry.RegisterForNavigation<AnimeDetailPage, AnimeDetailViewModel>(NavigationConstants.Paths.AnimeDetailPage);
             containerRegistry.RegisterForNavigation<AnimeSongsListPage, AnimeSongsListViewModel>(NavigationConstants.Paths.AnimeSongListPage);
