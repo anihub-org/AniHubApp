@@ -40,8 +40,13 @@ namespace AniHubApp.ViewModels
 
         private async void GetSongsByAnimeID(string animeId)
         {
-            var queryParams = new AnimeSongsListQueryParams(animeId: animeId);
+            if (Connectivity.NetworkAccess != NetworkAccess.Internet)
+            {
+                ShowNetworkConnectionError();
+                return;
+            }
 
+            var queryParams = new AnimeSongsListQueryParams(animeId: animeId);
             var response = await _aniApiService.GetAnimeSongsAsync(queryParams);
 
             AnimeSongs = new ObservableCollection<Song>(response.Data.Songs);
@@ -57,6 +62,11 @@ namespace AniHubApp.ViewModels
             {
                 await Browser.OpenAsync(spotifyURI, BrowserLaunchMode.SystemPreferred);
             }
+        }
+
+        private async void ShowNetworkConnectionError()
+        {
+            await _pageDialogService.DisplayAlertAsync("Error", "Missing network connection. Try again later", "Ok");
         }
     }
 }
