@@ -20,13 +20,15 @@ namespace AniHubApp.ViewModels
 
         public ICommand NavigateToSongListCommand { get; set; }
         public ICommand FavoriteCommand { get; set; }
+        public ICommand NavigateToAnimeSongsListCommand { get; set; }
         private JsonSerializerService _jsonSerializer { get; }
 
         public AnimeDetailViewModel(INavigationService navigationService) : base(navigationService)
         {
-            NavigateToSongListCommand = new Command(OnNavigateToAnimeSongs);
             FavoriteCommand = new Command(OnFavorite);
             _jsonSerializer = new JsonSerializerService();
+
+            NavigateToAnimeSongsListCommand = new Command(OnNavigateToAnimeSongs);
         }
 
         public async void OnNavigateToAnimeSongs()
@@ -55,10 +57,13 @@ namespace AniHubApp.ViewModels
 
         public void OnNavigatedTo(INavigationParameters parameters)
         {
-            Anime = parameters.GetValue<Anime>("anime");
-            if (Anime.Favorite)
+            if (parameters.GetNavigationMode() == Prism.Navigation.NavigationMode.New)
             {
-                ChangeFavorite(Anime, true);
+                Anime = parameters.GetValue<Anime>("anime");
+                if (Anime.Favorite)
+                {
+                    ChangeFavorite(Anime, true);
+                }
             }
         }
 

@@ -45,6 +45,15 @@
                 TextType="Html" />
             <Button
                 Margin="10"
+                CornerRadius="20"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                HeightRequest="70"
+                Text="Songs"
+                Command="{Binding NavigateToAnimeSongsListCommand}"
+                VerticalOptions="EndAndExpand"/>
+            <Button
+                Margin="10"
                 BackgroundColor="{Binding IsFavoriteColor}"
                 Command="{Binding FavoriteCommand}"
                 CornerRadius="20"
