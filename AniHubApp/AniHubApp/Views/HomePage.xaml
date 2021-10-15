@@ -1,21 +1,22 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage x:Class="AniHubApp.Views.HomePage"
-            xmlns="http://xamarin.com/schemas/2014/forms"
-            xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-            xmlns:prism="http://prismlibrary.com"
-            Title="Home"
-             NavigationPage.HasNavigationBar="False"
-             x:Name="Homepage">
+<ContentPage
+    x:Class="AniHubApp.Views.HomePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:prism="http://prismlibrary.com"
+    x:Name="Homepage"
+    Title="Home"
+    NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid
-            RowDefinitions="Auto, 230, Auto, 230, Auto, 100"
             Padding="10"
+            RowDefinitions="Auto, 230, Auto, 230, Auto, 100"
             VerticalOptions="End">
 
             <Label
                 Grid.Row="0"
-                Text="Popular"
-                FontSize="Medium"/>
+                FontSize="Medium"
+                Text="Popular" />
 
             <CarouselView
                 Grid.Row="1"
@@ -23,26 +24,21 @@
                 PeekAreaInsets="110">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Grid
-                            RowDefinitions="Auto, Auto"
-                            Padding="0, 10"
-                            Background="Red">
+                        <Grid Padding="0,10" RowDefinitions="Auto, Auto">
                             <Image
                                 Grid.Row="0"
-                                Source="{Binding CoverImageURL}"
                                 Aspect="AspectFit"
                                 HeightRequest="150"
-                                WidthRequest="150"/>
+                                Source="{Binding CoverImageURL}"
+                                WidthRequest="150" />
 
                             <Label
                                 Grid.Row="1"
-                                Text="{Binding Titles.English}"
-                                HorizontalTextAlignment="Center"/>
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Titles.English}" />
 
                             <Grid.GestureRecognizers>
-                                <TapGestureRecognizer 
-                                    Command="{Binding Source={x:Reference Homepage}, Path=BindingContext.NavigateToAnimeDetailCommand}"
-                                    CommandParameter="{Binding .}"/>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference Homepage}, Path=BindingContext.NavigateToAnimeDetailCommand}" CommandParameter="{Binding .}" />
                             </Grid.GestureRecognizers>
                         </Grid>
                     </DataTemplate>
@@ -51,8 +47,8 @@
 
             <Label
                 Grid.Row="2"
-                Text="Seasonal"
-                FontSize="Medium"/>
+                FontSize="Medium"
+                Text="Seasonal" />
 
             <CarouselView
                 Grid.Row="3"
@@ -60,25 +56,21 @@
                 PeekAreaInsets="110">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Grid
-                            RowDefinitions="Auto, Auto"
-                            Padding="0, 10">
+                        <Grid Padding="0,10" RowDefinitions="Auto, Auto">
                             <Image
                                 Grid.Row="0"
-                                Source="{Binding CoverImageURL}"
                                 Aspect="AspectFit"
                                 HeightRequest="150"
-                                WidthRequest="150"/>
+                                Source="{Binding CoverImageURL}"
+                                WidthRequest="150" />
 
                             <Label
                                 Grid.Row="1"
-                                Text="{Binding Titles.English}"
-                                HorizontalTextAlignment="Center"/>
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Titles.English}" />
 
                             <Grid.GestureRecognizers>
-                                <TapGestureRecognizer 
-                                    Command="{Binding Source={x:Reference Homepage}, Path=BindingContext.NavigateToAnimeDetailCommand}"
-                                    CommandParameter="{Binding .}"/>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference Homepage}, Path=BindingContext.NavigateToAnimeDetailCommand}" CommandParameter="{Binding .}" />
                             </Grid.GestureRecognizers>
                         </Grid>
                     </DataTemplate>
@@ -87,8 +79,8 @@
 
             <Label
                 Grid.Row="4"
-                Text="Song Suggestions"
-                FontSize="Medium"/>
+                FontSize="Medium"
+                Text="Song Suggestions" />
 
             <CarouselView
                 Grid.Row="5"
@@ -96,17 +88,14 @@
                 PeekAreaInsets="110">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Frame
-                            BorderColor="Black">
-                            <Grid
-                                RowDefinitions="Auto"
-                                Padding="10">
+                        <Frame BorderColor="Black">
+                            <Grid Padding="10" RowDefinitions="Auto">
 
                                 <Label
                                     Grid.Row="1"
-                                    Text="{Binding Title}"
                                     HorizontalTextAlignment="Center"
-                                    VerticalTextAlignment="Center"/>
+                                    Text="{Binding Title}"
+                                    VerticalTextAlignment="Center" />
 
                             </Grid>
                         </Frame>

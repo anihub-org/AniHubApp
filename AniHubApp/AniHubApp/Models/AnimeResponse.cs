@@ -54,6 +54,7 @@ namespace AniHubApp.Models
         public List<string> Genres { get; set; }
         [JsonProperty("score")]
         public int Score { get; set; }
+        public bool Favorite { get; set; } = false;
     }
 
     public class Titles
