@@ -54,17 +54,23 @@ namespace AniHubApp.ViewModels
             await NavigationService.NavigateAsync($"{NavigationConstants.Paths.AnimeDetailPage}", parameters);
         }
 
-        public async void OnNavigatedFrom(INavigationParameters parameters)
+        private async void GetAnimesByGenres()
         {
-
-        }
-
-        public async void OnNavigatedTo(INavigationParameters parameters)
-        {
-            AnimeSpecificGenre = parameters.GetValue<AnimeGenre>("genre");
             var queryParams = new AnimeListQueryParams(genre: AnimeSpecificGenre.Name);
             var response = await _aniApiService.GetAnimesAsync(queryParams);
             AnimesByGenre = new ObservableCollection<Anime>(response.Data.Animes);
+        }
+
+        public void OnNavigatedFrom(INavigationParameters parameters) { }
+
+        public void OnNavigatedTo(INavigationParameters parameters)
+        {
+            if (parameters.GetNavigationMode() == NavigationMode.New)
+            {
+                AnimeSpecificGenre = parameters.GetValue<AnimeGenre>("genre");
+
+                GetAnimesByGenres();
+            }
         }
     }
 }
