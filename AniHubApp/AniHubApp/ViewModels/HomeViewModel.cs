@@ -25,6 +25,7 @@ namespace AniHubApp.ViewModels
         private IPageDialogService _pageDialogService;
 
         public ICommand NavigateToAnimeDetailCommand { get; set; }
+        public ICommand RedirectToSpotifyCommand { get; set; }
 
         public HomeViewModel(INavigationService navigationService, IAniApiService aniApiService, IPageDialogService pageDialogService) : base(navigationService)
         {
@@ -32,6 +33,7 @@ namespace AniHubApp.ViewModels
             _aniApiService = aniApiService;
 
             NavigateToAnimeDetailCommand = new Command<Anime>(OnSelectedAnime);
+            RedirectToSpotifyCommand = new Command<string>(OnRedirectToSpotify);
         }
 
         public void Initialize(INavigationParameters parameters)
@@ -39,6 +41,18 @@ namespace AniHubApp.ViewModels
             GetPopularAnimes();
             GetSeasonalAnimes();
             GetSongSuggestions();
+        }
+
+        private async void OnRedirectToSpotify(string spotifyURL)
+        {
+            var spotifyURI = new Uri(spotifyURL);
+
+            bool canRedirect = await _pageDialogService.DisplayAlertAsync("Info", "Are you sure you want to redirect to Spotify?", "Yes", "No");
+
+            if (canRedirect)
+            {
+                await Browser.OpenAsync(spotifyURI, BrowserLaunchMode.SystemPreferred);
+            }
         }
 
         private async void OnSelectedAnime(Anime anime)

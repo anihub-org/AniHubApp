@@ -119,6 +119,10 @@
                                 Text="{Binding Title}"
                                 TextColor="White"
                                 VerticalTextAlignment="Center" />
+
+                            <Grid.GestureRecognizers>
+                                <TapGestureRecognizer Command="{Binding Source={x:Reference Homepage}, Path=BindingContext.RedirectToSpotifyCommand}" CommandParameter="{Binding OpenSpotifyURL}" />
+                            </Grid.GestureRecognizers>
                         </Grid>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
