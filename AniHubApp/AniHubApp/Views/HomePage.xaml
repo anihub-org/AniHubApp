@@ -33,6 +33,11 @@
                 Grid.Row="1"
                 ItemsSource="{Binding PopularAnimes}"
                 PeekAreaInsets="110">
+                <CarouselView.EmptyViewTemplate>
+                    <DataTemplate>
+                        <Label Text="No Anime to show..." />
+                    </DataTemplate>
+                </CarouselView.EmptyViewTemplate>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="0,10" RowDefinitions="Auto, Auto">
@@ -66,6 +71,11 @@
                 Grid.Row="3"
                 ItemsSource="{Binding SeasonalAnimes}"
                 PeekAreaInsets="110">
+                <CarouselView.EmptyViewTemplate>
+                    <DataTemplate>
+                        <Label Text="No Anime to show..." />
+                    </DataTemplate>
+                </CarouselView.EmptyViewTemplate>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="0,10" RowDefinitions="Auto, Auto">

@@ -30,6 +30,11 @@
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="2" />
                 </CollectionView.ItemsLayout>
+                <CollectionView.EmptyViewTemplate>
+                    <DataTemplate>
+                        <Label Text="No Genres to show..." />
+                    </DataTemplate>
+                </CollectionView.EmptyViewTemplate>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="Auto,Auto">
