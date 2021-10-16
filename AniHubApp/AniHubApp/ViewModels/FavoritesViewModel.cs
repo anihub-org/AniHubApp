@@ -52,11 +52,13 @@ namespace AniHubApp.ViewModels
 
             await NavigationService.NavigateAsync($"{NavigationConstants.Paths.AnimeDetailPage}", parameters);
         }
+
         protected virtual void RaiseIsActiveChanged()
         {
-            var serializedData = Preferences.Get("favorites", null);
+            var serializedData = Preferences.Get("favorites", "");
 
-            FavoriteAnimes = _jsonSerializer.Deserialize<ObservableCollection<Anime>>(serializedData);
+            var favoriteAnimeList = _jsonSerializer.Deserialize<List<Anime>>(serializedData);
+            FavoriteAnimes = new ObservableCollection<Anime>(favoriteAnimeList);
         }
     }
 }
