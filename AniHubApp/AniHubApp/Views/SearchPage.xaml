@@ -3,8 +3,7 @@
     x:Class="AniHubApp.Views.SearchPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:prism="http://prismlibrary.com"
-    Title="Search">
+    xmlns:prism="http://prismlibrary.com">
     <ContentPage.Content>
         <StackLayout>
             <Frame

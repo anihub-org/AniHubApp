@@ -44,14 +44,13 @@
                             Text="{Binding DurationInMilliseconds, Converter={StaticResource TimeFormatConverter}}" />
 
                         <Button
-                            Grid.Row="0"
+                            Grid.Row="1"
                             Grid.RowSpan="2"
                             Grid.Column="1"
-                            Background="Blue"
+                            ImageSource="Spotify.png"
+                            BackgroundColor="Transparent"
                             Command="{Binding Source={x:Reference AnimeSongPage}, Path=BindingContext.RedirectToSpotifyCommand}"
-                            CommandParameter="{Binding OpenSpotifyURL}"
-                            Text="Tap"
-                            TextColor="White" />
+                            CommandParameter="{Binding OpenSpotifyURL}"/>
 
                     </Grid>
                 </Frame>

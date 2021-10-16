@@ -5,7 +5,6 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:prism="http://prismlibrary.com"
     x:Name="Homepage"
-    Title="Home"
     NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid
