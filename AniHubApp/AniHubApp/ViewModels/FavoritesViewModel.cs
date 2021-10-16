@@ -18,6 +18,25 @@ namespace AniHubApp.ViewModels
         public ICommand NavigateToAnimeDetailCommand { get; set; }
         private IJsonSerializerService _jsonSerializer { get; set; }
 
+        private Anime _selectedAnime;
+        public Anime SelectedAnime
+        {
+            get
+            {
+                return _selectedAnime;
+            }
+            set
+            {
+                _selectedAnime = value;
+
+                if (_selectedAnime != null)
+                {
+                    NavigateToAnimeDetailCommand.Execute(_selectedAnime);
+                    _selectedAnime = null;
+                }
+            }
+        }
+
         private bool _IsActive;
         public bool IsActive
         {
@@ -38,6 +57,7 @@ namespace AniHubApp.ViewModels
         public FavoritesViewModel(INavigationService navigationService, IJsonSerializerService jsonSerializerService) : base(navigationService)
         {
             _jsonSerializer = jsonSerializerService;
+
             NavigateToAnimeDetailCommand = new Command<Anime>(OnSelectedAnime);
         }
 

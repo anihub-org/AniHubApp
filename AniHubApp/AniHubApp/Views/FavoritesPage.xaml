@@ -6,7 +6,10 @@
     xmlns:prism="http://prismlibrary.com"
     Title="Favorites">
 
-    <CollectionView ItemsSource="{Binding FavoriteAnimes}">
+    <CollectionView 
+        ItemsSource="{Binding FavoriteAnimes}"
+        SelectedItem="{Binding SelectedAnime}"
+        SelectionMode="Single">
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <Grid ColumnDefinitions="Auto, Auto">
