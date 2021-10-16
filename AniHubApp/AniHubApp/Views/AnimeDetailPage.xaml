@@ -12,7 +12,7 @@
                 Source="{Binding Anime.BannerImageURL}" />
             <Label
                 Margin="10,0,0,0"
-                Style="{StaticResource TitleLabelStyle}"
+                Style="{StaticResource BlackTitleLabelStyle}"
                 Text="{Binding Anime.Titles.English}" />
             <Label Margin="10,0,0,0" Text="{Binding Anime.SeasonYear}" />
             <CollectionView

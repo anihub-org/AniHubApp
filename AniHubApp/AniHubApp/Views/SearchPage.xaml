@@ -12,10 +12,10 @@
                 Margin="7"
                 Padding="15">
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="searchIconSmall.xml" />
+                    <Image Source="searchIcon24dp.png" />
                     <Label
                         Margin="0"
-                        Style="{StaticResource HeadingLabelStyle}"
+                        Style="{StaticResource SearchLabelStyle}"
                         Text="Anime"
                         VerticalOptions="Center" />
                     <StackLayout.GestureRecognizers>

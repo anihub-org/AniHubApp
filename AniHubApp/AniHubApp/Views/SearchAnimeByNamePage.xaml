@@ -21,7 +21,7 @@
                         <Label
                             Grid.Row="1"
                             HorizontalOptions="Center"
-                            Style="{StaticResource TitleLabelStyle}"
+                            Style="{StaticResource BlackTitleLabelStyle}"
                             Text="Search your favorite animes here"
                             VerticalOptions="Center" />
                     </Grid>

@@ -6,18 +6,27 @@
     xmlns:prism="http://prismlibrary.com">
     <Application.Resources>
         <ResourceDictionary>
-            <Style x:Key="TitleLabelStyle" TargetType="Label">
+            <Style x:Key="BlackTitleLabelStyle" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="Large" />
                 <Setter Property="TextColor" Value="Black" />
             </Style>
+            <Style x:Key="WhiteTitleLabelStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="Large" />
+                <Setter Property="TextColor" Value="White" />
+            </Style>
             <Style x:Key="SubtitleLabelStyle" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="Medium" />
-                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="TextColor" Value="White" />
             </Style>
             <Style x:Key="HeadingLabelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium" />
+            </Style>
+            <Style x:Key="SearchLabelStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="TextColor" Value="Gray"/>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

@@ -7,7 +7,7 @@
         <StackLayout>
             <Label
                 HorizontalOptions="Center"
-                Style="{StaticResource TitleLabelStyle}"
+                Style="{StaticResource BlackTitleLabelStyle}"
                 Text="{Binding AnimeSpecificGenre.Name}" />
             <CollectionView ItemsSource="{Binding AnimesByGenre}" SelectionMode="Single">
                 <CollectionView.ItemsLayout>
