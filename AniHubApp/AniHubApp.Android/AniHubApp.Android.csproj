@@ -498,5 +498,83 @@
     <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xxxhdpi\outline_play_circle_filled_black_48.png" />
     <AndroidResource Include="Resources\drawable\onePunchMan.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable\outline_library_music_24.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-hdpi\outline_library_music_white_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-hdpi\outline_library_music_white_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-hdpi\outline_library_music_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-hdpi\outline_library_music_white_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-hdpi\outline_library_music_white_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-mdpi\outline_library_music_white_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-mdpi\outline_library_music_white_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-mdpi\outline_library_music_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-mdpi\outline_library_music_white_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-mdpi\outline_library_music_white_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xhdpi\outline_library_music_white_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xhdpi\outline_library_music_white_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xhdpi\outline_library_music_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xhdpi\outline_library_music_white_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xhdpi\outline_library_music_white_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xxhdpi\outline_library_music_white_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xxhdpi\outline_library_music_white_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xxhdpi\outline_library_music_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xxhdpi\outline_library_music_white_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xxhdpi\outline_library_music_white_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xxxhdpi\outline_library_music_white_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xxxhdpi\outline_library_music_white_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xxxhdpi\outline_library_music_white_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xxxhdpi\outline_library_music_white_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\library_music-white-android\res\drawable-xxxhdpi\outline_library_music_white_48.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

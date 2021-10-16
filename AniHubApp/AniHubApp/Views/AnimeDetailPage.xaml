@@ -45,6 +45,8 @@
             <Button
                 Style="{StaticResource AnimeDetailButtonStyle}"
                 Text="Songs"
+                BackgroundColor="#7b61d4"
+                TextColor="White"
                 Command="{Binding NavigateToAnimeSongsListCommand}" />
             <Button
                 Style="{StaticResource AnimeDetailButtonStyle}"

@@ -49,7 +49,10 @@ namespace AniHubApp.ViewModels
             var queryParams = new AnimeSongsListQueryParams(animeId: animeId);
             var response = await _aniApiService.GetAnimeSongsAsync(queryParams);
 
-            AnimeSongs = new ObservableCollection<Song>(response.Data.Songs);
+            if (response.Data != null)
+            {
+                AnimeSongs = new ObservableCollection<Song>(response.Data.Songs);
+            }
         }
 
         private async void OnRedirectToSpotify(string spotifyURL)

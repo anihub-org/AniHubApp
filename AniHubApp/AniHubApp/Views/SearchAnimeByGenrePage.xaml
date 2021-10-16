@@ -3,15 +3,22 @@
     x:Class="AniHubApp.Views.SearchAnimeByGenrePage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
     <ContentPage.Content>
         <StackLayout>
             <Label
                 HorizontalOptions="Center"
                 Style="{StaticResource BlackTitleLabelStyle}"
                 Text="{Binding AnimeSpecificGenre.Name}" />
-            <CollectionView ItemsSource="{Binding AnimesByGenre}" SelectionMode="Single">
+            <CollectionView 
+                ItemsSource="{Binding AnimesByGenre}"
+                SelectedItem="{Binding SelectAnime}"
+                SelectionMode="Single">
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                    <GridItemsLayout 
+                        Orientation="Vertical" 
+                        Span="2"
+                        VerticalItemSpacing="20"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.EmptyViewTemplate>
                     <DataTemplate>
@@ -21,22 +28,17 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="Auto,Auto">
-                            <Frame
-                                Margin="4"
-                                BackgroundColor="LightGray"
-                                CornerRadius="10">
-                                <StackLayout>
-                                    <Image
-                                        Grid.Row="0"
-                                        HeightRequest="250"
-                                        Source="{Binding CoverImageURL}"
-                                        WidthRequest="200" />
-                                    <Label
-                                        Grid.Row="1"
-                                        HorizontalTextAlignment="Center"
-                                        Text="{Binding Titles.English}" />
-                                </StackLayout>
-                            </Frame>
+                            <Image
+                                Grid.Row="0"
+                                HeightRequest="200"
+                                Source="{Binding CoverImageURL}"
+                                WidthRequest="200" />
+                            <Label
+                                Grid.Row="1"
+                                FontSize="Subtitle"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Titles.English}" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>

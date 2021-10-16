@@ -109,15 +109,15 @@
                     PeekAreaInsets="110">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Frame BorderColor="Black">
-                            <Grid Padding="10" RowDefinitions="Auto">
-                                <Label
-                                    Grid.Row="1"
-                                    HorizontalTextAlignment="Center"
-                                    Text="{Binding Title}"
-                                    VerticalTextAlignment="Center" />
-                            </Grid>
-                        </Frame>
+                        <Grid Padding="10" RowDefinitions="Auto, Auto">
+                            <Image
+                                />
+                            <Label
+                                Grid.Row="1"
+                                HorizontalTextAlignment="Center"
+                                Text="{Binding Title}"
+                                VerticalTextAlignment="Center" />
+                        </Grid>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
