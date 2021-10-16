@@ -6,7 +6,9 @@
             android:TabbedPage.ToolbarPlacement="Bottom"
             xmlns:views="clr-namespace:AniHubApp.Views"
             BarBackgroundColor="#7E42F5"
-            NavigationPage.HasNavigationBar="False">
+            NavigationPage.HasNavigationBar="False"
+            android:TabbedPage.BarItemColor="#66FFFFFF"
+            android:TabbedPage.BarSelectedItemColor="White">
     <TabbedPage.Children>
         <views:HomePage Title="Home" IconImageSource="baseline_home_white_24.png"/>
         <views:SearchPage Title="Search" IconImageSource="baseline_search_white_24.png"/>
