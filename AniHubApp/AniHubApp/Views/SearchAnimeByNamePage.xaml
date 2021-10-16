@@ -1,19 +1,29 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AniHubApp.Views.SearchAnimeByNamePage">
+<ContentPage
+    x:Class="AniHubApp.Views.SearchAnimeByNamePage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <StackLayout>
-            <SearchBar 
+            <SearchBar
                 x:Name="searchBar"
                 Placeholder="Anime"
                 SearchCommand="{Binding SearchCommand}"
-                SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
+                SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}" />
             <CollectionView ItemsSource="{Binding AnimesByName}" SelectionMode="Single">
                 <CollectionView.EmptyView>
                     <Grid RowDefinitions="Auto, Auto">
-                        <Image Source="searchIcon48dp.svg" HorizontalOptions="Center" Grid.Row="0" Margin="0,160,0,0"/>
-                        <Label Text="Search your favorite animes here" HorizontalOptions="Center" VerticalOptions="Center" FontSize="Large" Grid.Row="1"/>
+                        <Image
+                            Grid.Row="0"
+                            Margin="0,160,0,0"
+                            HorizontalOptions="Center"
+                            Source="searchIcon48dp.svg" />
+                        <Label
+                            Grid.Row="1"
+                            HorizontalOptions="Center"
+                            Style="{StaticResource TitleLabelStyle}"
+                            Text="Search your favorite animes here"
+                            VerticalOptions="Center" />
                     </Grid>
                 </CollectionView.EmptyView>
                 <CollectionView.ItemsLayout>
@@ -22,10 +32,20 @@
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="Auto,Auto">
-                            <Frame BackgroundColor="LightGray" CornerRadius="10" Margin="4">
+                            <Frame
+                                Margin="4"
+                                BackgroundColor="LightGray"
+                                CornerRadius="10">
                                 <StackLayout>
-                                    <Image Source="{Binding CoverImageURL}" WidthRequest="200" HeightRequest="250" Grid.Row="0"/>
-                                    <Label Text="{Binding Titles.English}" TextColor="Black" HorizontalTextAlignment="Center" Grid.Row="1"/>
+                                    <Image
+                                        Grid.Row="0"
+                                        HeightRequest="250"
+                                        Source="{Binding CoverImageURL}"
+                                        WidthRequest="200" />
+                                    <Label
+                                        Grid.Row="1"
+                                        HorizontalTextAlignment="Center"
+                                        Text="{Binding Titles.English}" />
                                 </StackLayout>
                             </Frame>
                         </Grid>

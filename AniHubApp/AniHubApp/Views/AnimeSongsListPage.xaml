@@ -1,57 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AniHubApp.Views.AnimeSongsListPage"
-             x:Name="AnimeSongPage"
-             Title="Songs"
-             xmlns:converter="clr-namespace:AniHubApp.Converters">
+<ContentPage
+    x:Class="AniHubApp.Views.AnimeSongsListPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:converter="clr-namespace:AniHubApp.Converters"
+    x:Name="AnimeSongPage"
+    Title="Songs">
 
     <ContentPage.Resources>
         <ResourceDictionary>
-            <converter:TimeFormatConverter x:Key="TimeFormatConverter"/>
+            <converter:TimeFormatConverter x:Key="TimeFormatConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    
+
     <CollectionView ItemsSource="{Binding AnimeSongs}">
         <CollectionView.ItemTemplate>
             <DataTemplate>
                 <Frame BorderColor="LightGray">
                     <Grid
-                        RowDefinitions="Auto, Auto, Auto"
                         ColumnDefinitions="*, Auto"
+                        RowDefinitions="Auto, Auto, Auto"
                         RowSpacing="0">
 
                         <Label
                             Grid.Row="0"
                             Grid.Column="0"
-                            Text="{Binding Title}"
-                            FontSize="Body"
-                            FontAttributes="Bold"/>
+                            Style="{StaticResource HeadingLabelStyle}"
+                            Text="{Binding Title}" />
 
                         <Label
                             Grid.Row="1"
                             Grid.Column="0"
-                            Text="{Binding Artist}"/>
+                            Text="{Binding Artist}" />
 
                         <Label
                             Grid.Row="2"
                             Grid.Column="0"
-                            Text="{Binding Year}"/>
+                            Text="{Binding Year}" />
 
                         <Label
                             Grid.Row="0"
                             Grid.Column="1"
-                            Text="{Binding DurationInMilliseconds, Converter={StaticResource TimeFormatConverter}}"/>
+                            Text="{Binding DurationInMilliseconds, Converter={StaticResource TimeFormatConverter}}" />
 
                         <Button
                             Grid.Row="0"
                             Grid.RowSpan="2"
                             Grid.Column="1"
                             Background="Blue"
-                            Text="Tap"
-                            TextColor="White"
                             Command="{Binding Source={x:Reference AnimeSongPage}, Path=BindingContext.RedirectToSpotifyCommand}"
-                            CommandParameter="{Binding OpenSpotifyURL}"/>
+                            CommandParameter="{Binding OpenSpotifyURL}"
+                            Text="Tap"
+                            TextColor="White" />
 
                     </Grid>
                 </Frame>

@@ -7,31 +7,42 @@
     Title="Search">
     <ContentPage.Content>
         <StackLayout>
-            <Frame Padding="15" Margin="7" Grid.Row="0">
+            <Frame
+                Grid.Row="0"
+                Margin="7"
+                Padding="15">
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="searchIconSmall.xml"/>
-                    <Label 
-                        Text="Anime" 
-                        TextColor="Black"
-                        FontSize="Medium"
-                        Margin="0" 
-                        VerticalOptions="Center"/>
+                    <Image Source="searchIconSmall.xml" />
+                    <Label
+                        Margin="0"
+                        Style="{StaticResource HeadingLabelStyle}"
+                        Text="Anime"
+                        VerticalOptions="Center" />
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding NavigateToSearchAnimeByName}"/>
+                        <TapGestureRecognizer Command="{Binding NavigateToSearchAnimeByName}" />
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
             </Frame>
-            <CollectionView ItemsSource="{Binding AnimeGenres}" SelectedItem="{Binding SelectAnimeGenre}" SelectionMode="Single">
+            <CollectionView
+                ItemsSource="{Binding AnimeGenres}"
+                SelectedItem="{Binding SelectAnimeGenre}"
+                SelectionMode="Single">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="2" />
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="Auto,Auto">
-                            <Frame BackgroundColor="LightGray" CornerRadius="10" Margin="4">
+                            <Frame
+                                Margin="4"
+                                BackgroundColor="LightGray"
+                                CornerRadius="10">
                                 <StackLayout>
-                                    <Image Source="{Binding CoverImageURL}" WidthRequest="200" HeightRequest="250"/>
-                                    <Label Text="{Binding Name}" TextColor="Black" HorizontalTextAlignment="Center"/>
+                                    <Image
+                                        HeightRequest="250"
+                                        Source="{Binding CoverImageURL}"
+                                        WidthRequest="200" />
+                                    <Label HorizontalTextAlignment="Center" Text="{Binding Name}" />
                                 </StackLayout>
                             </Frame>
                         </Grid>

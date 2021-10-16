@@ -1,26 +1,27 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="AniHubApp.Views.MainPage">
+<ContentPage
+    x:Class="AniHubApp.Views.MainPage"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <Grid
-            RowDefinitions="Auto, Auto"
-            Padding="10, 80"
+            Padding="10,80"
             HorizontalOptions="Center"
+            RowDefinitions="Auto, Auto"
             VerticalOptions="End">
 
             <Label
                 Grid.Row="0"
-                Text="Find your favorite animes here!"
-                FontSize="Large"/>
+                Style="{StaticResource TitleLabelStyle}"
+                Text="Find your favorite animes here!" />
             <Button
                 Grid.Row="1"
-                Text="Discover Animes!"
-                TextTransform="None"
+                Command="{Binding NavigateToHomePageCommand}"
+                CornerRadius="30"
                 FontSize="Medium"
                 HorizontalOptions="CenterAndExpand"
-                CornerRadius="30"
-                Command="{Binding NavigateToHomePageCommand}"/>
+                Text="Discover Animes!"
+                TextTransform="None" />
         </Grid>
     </ContentPage.Content>
 </ContentPage>

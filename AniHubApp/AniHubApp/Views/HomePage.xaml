@@ -15,7 +15,8 @@
 
             <Label
                 Grid.Row="0"
-                FontSize="Medium"
+                HorizontalOptions="Center"
+                Style="{StaticResource SubtitleLabelStyle}"
                 Text="Popular" />
 
             <CarouselView
@@ -47,7 +48,8 @@
 
             <Label
                 Grid.Row="2"
-                FontSize="Medium"
+                HorizontalOptions="Center"
+                Style="{StaticResource SubtitleLabelStyle}"
                 Text="Seasonal" />
 
             <CarouselView
@@ -79,7 +81,8 @@
 
             <Label
                 Grid.Row="4"
-                FontSize="Medium"
+                HorizontalOptions="Center"
+                Style="{StaticResource SubtitleLabelStyle}"
                 Text="Song Suggestions" />
 
             <CarouselView

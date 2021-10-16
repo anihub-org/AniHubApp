@@ -12,8 +12,7 @@
                 Source="{Binding Anime.BannerImageURL}" />
             <Label
                 Margin="10,0,0,0"
-                FontAttributes="Bold"
-                FontSize="Large"
+                Style="{StaticResource TitleLabelStyle}"
                 Text="{Binding Anime.Titles.English}" />
             <Label Margin="10,0,0,0" Text="{Binding Anime.SeasonYear}" />
             <CollectionView
@@ -35,8 +34,7 @@
             </CollectionView>
             <Label
                 Margin="10,0,10,0"
-                FontAttributes="Bold"
-                FontSize="Medium"
+                Style="{StaticResource SubtitleLabelStyle}"
                 Text="Description" />
             <Label
                 Margin="10,0,10,0"
@@ -45,13 +43,13 @@
                 TextType="Html" />
             <Button
                 Margin="10"
+                Command="{Binding NavigateToAnimeSongsListCommand}"
                 CornerRadius="20"
                 FontAttributes="Bold"
                 FontSize="Medium"
                 HeightRequest="70"
                 Text="Songs"
-                Command="{Binding NavigateToAnimeSongsListCommand}"
-                VerticalOptions="EndAndExpand"/>
+                VerticalOptions="EndAndExpand" />
             <Button
                 Margin="10"
                 BackgroundColor="{Binding IsFavoriteColor}"
