@@ -12,16 +12,52 @@ using Xamarin.Forms;
 
 namespace AniHubApp.ViewModels
 {
-    public class FavoritesViewModel : BaseViewModel, IActiveAware, INavigationAware
+    public class FavoritesViewModel : BaseViewModel, IActiveAware
     {
-        public static ObservableCollection<Anime> FavoriteAnimes { get; set; } = new ObservableCollection<Anime>();
+        public ObservableCollection<Anime> FavoriteAnimes { get; set; }
         public ICommand NavigateToAnimeDetailCommand { get; set; }
-        private JsonSerializerService _jsonSerializer { get; set; }
-        public bool IsActive { get; set ; }
+        private IJsonSerializerService _jsonSerializer { get; set; }
 
-        public FavoritesViewModel(INavigationService navigationService) : base(navigationService)
+        private Anime _selectedAnime;
+        public Anime SelectedAnime
         {
-            _jsonSerializer = new JsonSerializerService();
+            get
+            {
+                return _selectedAnime;
+            }
+            set
+            {
+                _selectedAnime = value;
+
+                if (_selectedAnime != null)
+                {
+                    NavigateToAnimeDetailCommand.Execute(_selectedAnime);
+                    _selectedAnime = null;
+                }
+            }
+        }
+
+        private bool _IsActive;
+        public bool IsActive
+        {
+            get
+            {
+                return _IsActive;
+            }
+            set
+            {
+                _IsActive = value;
+                if (value)
+                {
+                    RaiseIsActiveChanged();
+                }
+            }
+        }
+
+        public FavoritesViewModel(INavigationService navigationService, IJsonSerializerService jsonSerializerService) : base(navigationService)
+        {
+            _jsonSerializer = jsonSerializerService;
+
             NavigateToAnimeDetailCommand = new Command<Anime>(OnSelectedAnime);
         }
 
@@ -36,23 +72,13 @@ namespace AniHubApp.ViewModels
 
             await NavigationService.NavigateAsync($"{NavigationConstants.Paths.AnimeDetailPage}", parameters);
         }
+
         protected virtual void RaiseIsActiveChanged()
         {
-            var data = _jsonSerializer.Deserialize<ObservableCollection<Anime>>(Preferences.Get("favorites", null));
-            foreach (var anime in data)
-            {
-                FavoriteAnimes.Add(anime);
-            }
-        }
+            var serializedData = Preferences.Get("favorites", "");
 
-        public void OnNavigatedFrom(INavigationParameters parameters)
-        {
-            throw new NotImplementedException();
-        }
-
-        public void OnNavigatedTo(INavigationParameters parameters)
-        {
-            throw new NotImplementedException();
+            var favoriteAnimeList = _jsonSerializer.Deserialize<List<Anime>>(serializedData);
+            FavoriteAnimes = new ObservableCollection<Anime>(favoriteAnimeList);
         }
     }
 }

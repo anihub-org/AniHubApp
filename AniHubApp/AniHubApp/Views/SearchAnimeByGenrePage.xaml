@@ -5,7 +5,7 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="{Binding AnimeSpecificGenre.Name}" HorizontalOptions="Center" FontSize="Large" TextColor="Black"/>
-            <CollectionView ItemsSource="{Binding AnimesByGenre}" SelectionMode="Single">
+            <CollectionView ItemsSource="{Binding AnimesByGenre}" SelectedItem="{Binding SelectAnime}" SelectionMode="Single">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="2" />
                 </CollectionView.ItemsLayout>

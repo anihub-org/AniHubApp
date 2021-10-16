@@ -9,7 +9,7 @@
                 Placeholder="Anime"
                 SearchCommand="{Binding SearchCommand}"
                 SearchCommandParameter="{Binding Text, Source={x:Reference searchBar}}"/>
-            <CollectionView ItemsSource="{Binding AnimesByName}" SelectionMode="Single">
+            <CollectionView ItemsSource="{Binding AnimesByName}" SelectedItem="{Binding SelectAnime}" SelectionMode="Single">
                 <CollectionView.EmptyView>
                     <Grid RowDefinitions="Auto, Auto">
                         <Image Source="searchIcon48dp.svg" HorizontalOptions="Center" Grid.Row="0" Margin="0,160,0,0"/>
