@@ -26,7 +26,8 @@
                             Grid.Row="0"
                             Grid.Column="0"
                             Style="{StaticResource HeadingLabelStyle}"
-                            Text="{Binding Title}" />
+                            Text="{Binding Title}"
+                            TextColor="#7b61d4"/>
 
                         <Label
                             Grid.Row="1"
@@ -42,6 +43,7 @@
                             Grid.Row="0"
                             Grid.Column="1"
                             HorizontalTextAlignment="Center"
+                            FontAttributes="Bold"
                             Text="{Binding DurationInMilliseconds, Converter={StaticResource TimeFormatConverter}}"/>
 
                         <Button

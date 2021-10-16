@@ -6,39 +6,27 @@
     xmlns:prism="http://prismlibrary.com"
     Title="Favorites">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Favorites" Style="{StaticResource WhiteTitleLabelStyle}" HorizontalOptions="Center" Margin="0,20,0,0"/>
-            <CollectionView Grid.Row="1" ItemsSource="{Binding FavoriteAnimes}">
-                <CollectionView.ItemTemplate>
-                    <DataTemplate>
-                        <Grid Padding="0,10" RowDefinitions="Auto, Auto">
-                            <Image
-                                Grid.Row="0"
-                                Aspect="AspectFit"
-                                HeightRequest="150"
-                                Source="{Binding CoverImageURL}"
-                                WidthRequest="150" />
-
-    <CollectionView 
+        <CollectionView 
         ItemsSource="{Binding FavoriteAnimes}"
         SelectedItem="{Binding SelectedAnime}"
         SelectionMode="Single">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Grid ColumnDefinitions="Auto, Auto">
-                    <Image
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <Grid ColumnDefinitions="Auto, Auto">
+                        <Image
                         Grid.Column="0"
                         Aspect="AspectFit"
                         HeightRequest="150"
                         Source="{Binding CoverImageURL}"
                         WidthRequest="150" />
 
-                    <Label
+                        <Label
                         Grid.Column="1"
                         HorizontalTextAlignment="Center"
                         Text="{Binding Titles.English}" />
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+                    </Grid>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </ContentPage.Content>
 </ContentPage>
