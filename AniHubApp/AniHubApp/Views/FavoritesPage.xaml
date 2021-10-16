@@ -7,8 +7,25 @@
     Title="Favorites">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Favorites" Style="{StaticResource WhiteTitleLabelStyle}" HorizontalOptions="Center" Margin="0,20,0,0"/>
+            <Label Text="Favorites" Style="{StaticResource BlackTitleLabelStyle}" HorizontalOptions="Center" Margin="0,20,0,0"/>
             <CollectionView Grid.Row="1" ItemsSource="{Binding FavoriteAnimes}">
+                <CollectionView.EmptyView>
+                    <Grid RowDefinitions="Auto, Auto">
+                        <Image
+                            Grid.Row="0"
+                            Margin="0,160,0,0"
+                            HorizontalOptions="Center"
+                            Source="onePunchMan.png" 
+                            Opacity="0.5"/>
+                        <Label
+                            Grid.Row="1"
+                            HorizontalOptions="Center"
+                            Style="{StaticResource BlackTitleLabelStyle}"
+                            Text="It's Empty. Go find your favorite animes!"
+                            VerticalOptions="Center"
+                            TextColor="Gray"/>
+                    </Grid>
+                </CollectionView.EmptyView>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="0,10" RowDefinitions="Auto, Auto">
