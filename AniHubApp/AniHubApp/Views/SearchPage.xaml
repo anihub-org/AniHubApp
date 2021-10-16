@@ -3,41 +3,57 @@
     x:Class="AniHubApp.Views.SearchPage"
     xmlns="http://xamarin.com/schemas/2014/forms"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:prism="http://prismlibrary.com"
-    Title="Search">
+    xmlns:prism="http://prismlibrary.com">
     <ContentPage.Content>
-        <StackLayout>
-            <Frame Padding="15" Margin="7" Grid.Row="0">
+        <Grid
+            RowDefinitions="Auto, Auto">
+
+            <Frame
+                Grid.Row="0"
+                Margin="7"
+                Padding="15">
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="searchIconSmall.xml"/>
-                    <Label 
-                        Text="Anime" 
-                        TextColor="Black"
-                        FontSize="Medium"
-                        Margin="0" 
-                        VerticalOptions="Center"/>
+                    <Image Source="searchIcon24dp.png" />
+                    <Label
+                        Margin="0"
+                        Style="{StaticResource SearchLabelStyle}"
+                        Text="Anime"
+                        VerticalOptions="Center" />
                     <StackLayout.GestureRecognizers>
-                        <TapGestureRecognizer Command="{Binding NavigateToSearchAnimeByName}"/>
+                        <TapGestureRecognizer Command="{Binding NavigateToSearchAnimeByName}" />
                     </StackLayout.GestureRecognizers>
                 </StackLayout>
             </Frame>
-            <CollectionView ItemsSource="{Binding AnimeGenres}" SelectedItem="{Binding SelectAnimeGenre}" SelectionMode="Single">
+
+            <CollectionView
+                Grid.Row="1"
+                ItemsSource="{Binding AnimeGenres}"
+                SelectedItem="{Binding SelectAnimeGenre}"
+                SelectionMode="Single">
                 <CollectionView.ItemsLayout>
-                    <GridItemsLayout Orientation="Vertical" Span="2" />
+                    <GridItemsLayout 
+                        Orientation="Vertical" 
+                        Span="2"
+                        VerticalItemSpacing="20"/>
                 </CollectionView.ItemsLayout>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="Auto,Auto">
-                            <Frame BackgroundColor="LightGray" CornerRadius="10" Margin="4">
-                                <StackLayout>
-                                    <Image Source="{Binding CoverImageURL}" WidthRequest="200" HeightRequest="250"/>
-                                    <Label Text="{Binding Name}" TextColor="Black" HorizontalTextAlignment="Center"/>
-                                </StackLayout>
-                            </Frame>
+                            <Image
+                                Grid.Row="0"
+                                HeightRequest="200"
+                                Source="{Binding CoverImageURL}"
+                                WidthRequest="200" />
+                            <Label
+                                Grid.Row="1"
+                                FontSize="Subtitle"
+                                FontAttributes="Bold"
+                                HorizontalTextAlignment="Center" 
+                                Text="{Binding Name}" />
                         </Grid>
                     </DataTemplate>
                 </CollectionView.ItemTemplate>
             </CollectionView>
-        </StackLayout>
+        </Grid>
     </ContentPage.Content>
 </ContentPage>

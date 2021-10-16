@@ -2,12 +2,16 @@
 <TabbedPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="AniHubApp.Views.ContainerTabbedPage"
+            xmlns:android="clr-namespace:Xamarin.Forms.PlatformConfiguration.AndroidSpecific;assembly=Xamarin.Forms.Core"
+            android:TabbedPage.ToolbarPlacement="Bottom"
             xmlns:views="clr-namespace:AniHubApp.Views"
-            Title="Main"
-            NavigationPage.HasNavigationBar="False">
+            BarBackgroundColor="#7E42F5"
+            NavigationPage.HasNavigationBar="False"
+            android:TabbedPage.BarItemColor="#66FFFFFF"
+            android:TabbedPage.BarSelectedItemColor="White">
     <TabbedPage.Children>
-        <views:HomePage />
-        <views:SearchPage />
-        <views:FavoritesPage />
+        <views:HomePage Title="Home" IconImageSource="baseline_home_white_24.png"/>
+        <views:SearchPage Title="Search" IconImageSource="baseline_search_white_24.png"/>
+        <views:FavoritesPage Title="Favorite" IconImageSource="baseline_star_white_24.png" />
     </TabbedPage.Children>
 </TabbedPage>

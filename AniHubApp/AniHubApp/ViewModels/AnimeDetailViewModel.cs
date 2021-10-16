@@ -17,7 +17,7 @@ namespace AniHubApp.ViewModels
         public Anime Anime { get; set; }
         public Color IsFavoriteColor { get; set; } = Color.Gray;
         public Color IsFavoriteTextColor { get; set; } = Color.Black;
-        public string IsFavoriteText { get; set; } = "Favorite";
+        public string IsFavoriteText { get; set; } = "Like";
 
         public ICommand NavigateToSongListCommand { get; set; }
         public ICommand FavoriteCommand { get; set; }

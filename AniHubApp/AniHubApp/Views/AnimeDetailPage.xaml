@@ -12,8 +12,7 @@
                 Source="{Binding Anime.BannerImageURL}" />
             <Label
                 Margin="10,0,0,0"
-                FontAttributes="Bold"
-                FontSize="Large"
+                Style="{StaticResource BlackTitleLabelStyle}"
                 Text="{Binding Anime.Titles.English}" />
             <Label Margin="10,0,0,0" Text="{Binding Anime.SeasonYear}" />
             <CollectionView
@@ -25,7 +24,7 @@
                         <StackLayout Padding="10">
                             <Frame
                                 Padding="10"
-                                BackgroundColor="Gray"
+                                BackgroundColor="#7b61d4"
                                 CornerRadius="20">
                                 <Label Text="{Binding .}" TextColor="White" />
                             </Frame>
@@ -35,34 +34,26 @@
             </CollectionView>
             <Label
                 Margin="10,0,10,0"
-                FontAttributes="Bold"
-                FontSize="Medium"
-                Text="Description" />
+                Style="{StaticResource SubtitleLabelStyle}"
+                Text="Description"
+                TextColor="Black"/>
             <Label
                 Margin="10,0,10,0"
                 HeightRequest="100"
                 Text="{Binding Anime.Descriptions.English}"
                 TextType="Html" />
             <Button
-                Margin="10"
-                CornerRadius="20"
-                FontAttributes="Bold"
-                FontSize="Medium"
-                HeightRequest="70"
+                Style="{StaticResource AnimeDetailButtonStyle}"
                 Text="Songs"
-                Command="{Binding NavigateToAnimeSongsListCommand}"
-                VerticalOptions="EndAndExpand"/>
+                BackgroundColor="#7b61d4"
+                TextColor="White"
+                Command="{Binding NavigateToAnimeSongsListCommand}" />
             <Button
-                Margin="10"
+                Style="{StaticResource AnimeDetailButtonStyle}"
                 BackgroundColor="{Binding IsFavoriteColor}"
                 Command="{Binding FavoriteCommand}"
-                CornerRadius="20"
-                FontAttributes="Bold"
-                FontSize="Medium"
-                HeightRequest="70"
                 Text="{Binding IsFavoriteText}"
-                TextColor="{Binding IsFavoriteTextColor}"
-                VerticalOptions="EndAndExpand" />
+                TextColor="{Binding IsFavoriteTextColor}"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

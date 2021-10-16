@@ -5,27 +5,52 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:prism="http://prismlibrary.com"
     Title="Favorites">
+    <ContentPage.Content>
+        <StackLayout>
+            <CollectionView Grid.Row="1"
+                            ItemsSource="{Binding FavoriteAnimes}"
+                            SelectedItem="{Binding SelectedAnime}"
+                            SelectionMode="Single">
+                <CollectionView.EmptyView>
+                    <Grid RowDefinitions="Auto, Auto">
+                                <Image
+                                    Grid.Row="0"
+                                    Margin="0,160,0,0"
+                                    HorizontalOptions="Center"
+                                    Source="onePunchMan.png" 
+                                    Opacity="0.5"/>
+                                <Label
+                                    Grid.Row="1"
+                                    HorizontalOptions="Center"
+                                    Style="{StaticResource BlackTitleLabelStyle}"
+                                    Text="It's Empty. Go find your favorite animes!"
+                                    VerticalOptions="Center"
+                                    HorizontalTextAlignment="Center"
+                                    TextColor="Gray"/>
+                            </Grid>
+                    </CollectionView.EmptyView>
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <Frame BorderColor="LightGray">
+                            <Grid Padding="0,10" RowDefinitions="Auto, Auto">
+                                <Image
+                                    Grid.Row="0"
+                                    Aspect="AspectFit"
+                                    HeightRequest="150"
+                                    Source="{Binding CoverImageURL}"
+                                    WidthRequest="150" />
 
-    <CollectionView 
-        ItemsSource="{Binding FavoriteAnimes}"
-        SelectedItem="{Binding SelectedAnime}"
-        SelectionMode="Single">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <Grid ColumnDefinitions="Auto, Auto">
-                    <Image
-                        Grid.Column="0"
-                        Aspect="AspectFit"
-                        HeightRequest="150"
-                        Source="{Binding CoverImageURL}"
-                        WidthRequest="150" />
-
-                    <Label
-                        Grid.Column="1"
-                        HorizontalTextAlignment="Center"
-                        Text="{Binding Titles.English}" />
-                </Grid>
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+                                <Label
+                                    Grid.Column="1"
+                                    HorizontalTextAlignment="Center"
+                                    Text="{Binding Titles.English}" 
+                                    Style="{StaticResource BlackTitleLabelStyle}"
+                                    VerticalOptions="Center"/>
+                            </Grid>
+                        </Frame>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>
