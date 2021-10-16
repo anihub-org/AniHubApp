@@ -41,17 +41,17 @@
                         <Label
                             Grid.Row="0"
                             Grid.Column="1"
-                            Text="{Binding DurationInMilliseconds, Converter={StaticResource TimeFormatConverter}}" />
+                            HorizontalTextAlignment="Center"
+                            Text="{Binding DurationInMilliseconds, Converter={StaticResource TimeFormatConverter}}"/>
 
                         <Button
                             Grid.Row="1"
                             Grid.RowSpan="2"
                             Grid.Column="1"
-                            ImageSource="Spotify.png"
+                            ImageSource="outline_play_circle_filled_black_36.png"
                             BackgroundColor="Transparent"
                             Command="{Binding Source={x:Reference AnimeSongPage}, Path=BindingContext.RedirectToSpotifyCommand}"
                             CommandParameter="{Binding OpenSpotifyURL}"/>
-
                     </Grid>
                 </Frame>
             </DataTemplate>

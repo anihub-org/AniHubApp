@@ -19,10 +19,10 @@
             <Style x:Key="SubtitleLabelStyle" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="Medium" />
-                <Setter Property="TextColor" Value="White" />
             </Style>
             <Style x:Key="HeadingLabelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium" />
+                <Setter Property="FontAttributes" Value="Bold" />
             </Style>
             <Style x:Key="SearchLabelStyle" TargetType="Label">
                 <Setter Property="FontSize" Value="Medium" />

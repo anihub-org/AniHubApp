@@ -419,5 +419,83 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\logo_transparent.png" />
   </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable\outline_play_circle_filled_24.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-hdpi\outline_play_circle_filled_black_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-hdpi\outline_play_circle_filled_black_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-hdpi\outline_play_circle_filled_black_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-hdpi\outline_play_circle_filled_black_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-hdpi\outline_play_circle_filled_black_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-mdpi\outline_play_circle_filled_black_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-mdpi\outline_play_circle_filled_black_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-mdpi\outline_play_circle_filled_black_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-mdpi\outline_play_circle_filled_black_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-mdpi\outline_play_circle_filled_black_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xhdpi\outline_play_circle_filled_black_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xhdpi\outline_play_circle_filled_black_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xhdpi\outline_play_circle_filled_black_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xhdpi\outline_play_circle_filled_black_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xhdpi\outline_play_circle_filled_black_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xxhdpi\outline_play_circle_filled_black_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xxhdpi\outline_play_circle_filled_black_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xxhdpi\outline_play_circle_filled_black_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xxhdpi\outline_play_circle_filled_black_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xxhdpi\outline_play_circle_filled_black_48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xxxhdpi\outline_play_circle_filled_black_18.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xxxhdpi\outline_play_circle_filled_black_20.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xxxhdpi\outline_play_circle_filled_black_24.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xxxhdpi\outline_play_circle_filled_black_36.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\play_circle_filled-black-android\res\drawable-xxxhdpi\outline_play_circle_filled_black_48.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>
