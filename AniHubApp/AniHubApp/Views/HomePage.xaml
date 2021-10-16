@@ -106,16 +106,18 @@
             <CarouselView
                     Grid.Row="5"
                     ItemsSource="{Binding SongSuggestions}"
+                    
                     PeekAreaInsets="110">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="10" RowDefinitions="Auto, Auto">
                             <Image
-                                />
+                                Source="outline_library_music_white_36"/>
                             <Label
                                 Grid.Row="1"
                                 HorizontalTextAlignment="Center"
                                 Text="{Binding Title}"
+                                TextColor="White"
                                 VerticalTextAlignment="Center" />
                         </Grid>
                     </DataTemplate>

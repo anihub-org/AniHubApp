@@ -15582,58 +15582,6 @@ namespace AniHubApp.Droid
 			
 			// aapt resource value: 0x7F0700C2
 			public const int YourLieInApril = 2131165378;
-			public const int outline_play_circle_filled_24 = 2131165355;
-			
-			// aapt resource value: 0x7F0700AC
-			public const int outline_play_circle_filled_black_18 = 2131165356;
-			
-			// aapt resource value: 0x7F0700AD
-			public const int outline_play_circle_filled_black_20 = 2131165357;
-			
-			// aapt resource value: 0x7F0700AE
-			public const int outline_play_circle_filled_black_24 = 2131165358;
-			
-			// aapt resource value: 0x7F0700AF
-			public const int outline_play_circle_filled_black_36 = 2131165359;
-			
-			// aapt resource value: 0x7F0700B0
-			public const int outline_play_circle_filled_black_48 = 2131165360;
-			
-			// aapt resource value: 0x7F0700B1
-			public const int Saiki = 2131165361;
-			
-			// aapt resource value: 0x7F0700B2
-			public const int searchIcon24dp = 2131165362;
-			
-			// aapt resource value: 0x7F0700B3
-			public const int searchIcon48dp = 2131165363;
-			
-			// aapt resource value: 0x7F0700B4
-			public const int searchIconSmall = 2131165364;
-			
-			// aapt resource value: 0x7F0700B5
-			public const int Spotify = 2131165365;
-			
-			// aapt resource value: 0x7F0700B6
-			public const int spotify_icon = 2131165366;
-			
-			// aapt resource value: 0x7F0700B7
-			public const int test_custom_background = 2131165367;
-			
-			// aapt resource value: 0x7F0700B8
-			public const int TheSevenDeadlySins = 2131165368;
-			
-			// aapt resource value: 0x7F0700B9
-			public const int TokyoGhoul = 2131165369;
-			
-			// aapt resource value: 0x7F0700BA
-			public const int tooltip_frame_dark = 2131165370;
-			
-			// aapt resource value: 0x7F0700BB
-			public const int tooltip_frame_light = 2131165371;
-			
-			// aapt resource value: 0x7F0700BC
-			public const int YourLieInApril = 2131165372;
 			
 			static Drawable()
 			{
