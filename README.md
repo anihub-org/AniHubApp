@@ -15,6 +15,21 @@ Mobile app tailored for anime fans. Powered by AniAPI, Anihub offers its user th
 
 ## Screenshots
 
+Main page | Home page
+:--------:|:--------:
+![main-page](screenshots/main-page.jpeg) | ![home-page](screenshots/home-page.jpeg)
+
+Search page | Favorite page
+:-----------:|:-----------:
+![search-page](screenshots/search-page.jpeg) | ![favorite-page](screenshots/favorite-page.jpeg)
+
+Anime Detail page | Anime Songs List page
+:----------------:|:---------------------:
+![anime-detail](screenshots/anime-detail-page.jpeg) | ![anime-songs-list](screenshots/anime-songs-list.jpeg)
+
+Empty search page | Search page with results
+:-----------------:|:----------------------:
+![empty-search](screenshots/empty-search-page.jpeg) | ![search-with-results](screenshots/search-page-results.jpeg)
 
 ## Team
 
@@ -24,9 +39,10 @@ User | Name | INTEC ID
 [kelvinlee0225](https://github.com/kelvinlee0225) | Kelvin Lee | 1087781
 [frankroberto20](https://github.com/frankroberto20) | Frank Chávez | 1085268
 
+
+
 ## Built With
 
-- [MonkeyCache.FileStore](https://github.com/jamesmontemagno/monkey-cache) - A simple caching library to cache any data structure for a specific amount of time in any .NET application
 - [NewtonSoft.Json](https://github.com/JamesNK/Newtonsoft.Json) - Json.NET is a popular high-performance JSON framework for .NET 
 - [Prism.Unity.Forms](https://github.com/PrismLibrary/Prism) - Use these extensions to build Xamarin.Forms applications with Prism and Unity
 - [PropertyChanged.Fody](https://github.com/Fody/PropertyChanged) - Add property notification to all classes that implement INotifyPropertyChanged
