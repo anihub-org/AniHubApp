@@ -6,26 +6,25 @@
     xmlns:prism="http://prismlibrary.com"
     x:Name="Homepage"
     NavigationPage.HasNavigationBar="False">
-    <ContentPage.Content>
+    <ScrollView>
         <Grid
-            Padding="10, 60"
             RowDefinitions="Auto, 230, Auto, 230, Auto, 100"
-            VerticalOptions="End">
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0,2">
                     <GradientStop Color="#0f0c29"
-                                  Offset="0.1"/>
+                                      Offset="0.1"/>
                     <GradientStop Color="#302b63"
-                                  Offset="0.5"/>
+                                      Offset="0.5"/>
                     <GradientStop Color="#24243e"
-                                  Offset="1.0"/>
+                                      Offset="1.0"/>
                 </LinearGradientBrush>
             </Grid.Background>
-
             <Label
                 Grid.Row="0"
                 HorizontalOptions="Center"
-                Style="{StaticResource SubtitleLabelStyle}"
+                Style="{StaticResource WhiteTitleLabelStyle}"
                 Text="Popular" />
 
             <CarouselView
@@ -39,18 +38,18 @@
                 </CarouselView.EmptyViewTemplate>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
-                        <Grid Padding="0,10" RowDefinitions="Auto, Auto">
+                        <Grid RowDefinitions="Auto, Auto">
                             <Image
-                                Grid.Row="0"
-                                Aspect="AspectFit"
-                                HeightRequest="150"
-                                Source="{Binding CoverImageURL}"
-                                WidthRequest="150" />
+                                    Grid.Row="0"
+                                    Aspect="AspectFit"
+                                    HeightRequest="150"
+                                    Source="{Binding CoverImageURL}"
+                                    WidthRequest="150" />
 
                             <Label
-                                Grid.Row="1"
-                                HorizontalTextAlignment="Center"
-                                Text="{Binding Titles.English}" />
+                                    Grid.Row="1"
+                                    Text="{Binding Titles.English}" 
+                                    Style="{StaticResource CarouselLabelStyle}"/>
 
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={x:Reference Homepage}, Path=BindingContext.NavigateToAnimeDetailCommand}" CommandParameter="{Binding .}" />
@@ -63,7 +62,7 @@
             <Label
                 Grid.Row="2"
                 HorizontalOptions="Center"
-                Style="{StaticResource SubtitleLabelStyle}"
+                Style="{StaticResource WhiteTitleLabelStyle}"
                 Text="Seasonal" />
 
             <CarouselView
@@ -79,16 +78,16 @@
                     <DataTemplate>
                         <Grid Padding="0,10" RowDefinitions="Auto, Auto">
                             <Image
-                                Grid.Row="0"
-                                Aspect="AspectFit"
-                                HeightRequest="150"
-                                Source="{Binding CoverImageURL}"
-                                WidthRequest="150" />
+                                    Grid.Row="0"
+                                    Aspect="AspectFit"
+                                    HeightRequest="150"
+                                    Source="{Binding CoverImageURL}"
+                                    WidthRequest="150" />
 
                             <Label
-                                Grid.Row="1"
-                                HorizontalTextAlignment="Center"
-                                Text="{Binding Titles.English}" />
+                                    Grid.Row="1"
+                                    Text="{Binding Titles.English}"
+                                    Style="{StaticResource CarouselLabelStyle}"/>
 
                             <Grid.GestureRecognizers>
                                 <TapGestureRecognizer Command="{Binding Source={x:Reference Homepage}, Path=BindingContext.NavigateToAnimeDetailCommand}" CommandParameter="{Binding .}" />
@@ -101,29 +100,27 @@
             <Label
                 Grid.Row="4"
                 HorizontalOptions="Center"
-                Style="{StaticResource SubtitleLabelStyle}"
+                Style="{StaticResource WhiteTitleLabelStyle}"
                 Text="Song Suggestions" />
 
             <CarouselView
-                Grid.Row="5"
-                ItemsSource="{Binding SongSuggestions}"
-                PeekAreaInsets="110">
+                    Grid.Row="5"
+                    ItemsSource="{Binding SongSuggestions}"
+                    PeekAreaInsets="110">
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Frame BorderColor="Black">
                             <Grid Padding="10" RowDefinitions="Auto">
-
                                 <Label
                                     Grid.Row="1"
                                     HorizontalTextAlignment="Center"
                                     Text="{Binding Title}"
                                     VerticalTextAlignment="Center" />
-
                             </Grid>
                         </Frame>
                     </DataTemplate>
                 </CarouselView.ItemTemplate>
             </CarouselView>
         </Grid>
-    </ContentPage.Content>
+    </ScrollView>
 </ContentPage>
