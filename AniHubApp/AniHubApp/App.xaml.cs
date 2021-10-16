@@ -32,7 +32,7 @@ namespace AniHubApp
             containerRegistry.RegisterForNavigation<AnimeDetailPage, AnimeDetailViewModel>(NavigationConstants.Paths.AnimeDetailPage);
             containerRegistry.RegisterForNavigation<AnimeSongsListPage, AnimeSongsListViewModel>(NavigationConstants.Paths.AnimeSongListPage);
 
-
+            containerRegistry.Register<IJsonSerializerService, JsonSerializerService>();
             containerRegistry.RegisterInstance<IAniApiService>(new AniApiService(new JsonSerializerService()));
         }
     }

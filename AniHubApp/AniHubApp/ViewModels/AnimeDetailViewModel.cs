@@ -75,8 +75,18 @@ namespace AniHubApp.ViewModels
                 IsFavoriteColor = Color.Goldenrod;
                 IsFavoriteTextColor = Color.White;
                 IsFavoriteText = "Favorited";
-                FavoritesViewModel.FavoriteAnimes.Add(anime);
-                string payload = _jsonSerializer.SerializeObject(FavoritesViewModel.FavoriteAnimes);
+
+                var serializedData = Preferences.Get("favorites", null);
+                var favoriteAnimes = _jsonSerializer.Deserialize<ObservableCollection<Anime>>(serializedData);
+
+                if (favoriteAnimes == null)
+                {
+                    favoriteAnimes = new ObservableCollection<Anime>();
+                }
+
+                favoriteAnimes.Add(anime);
+
+                string payload = _jsonSerializer.SerializeObject(favoriteAnimes);
                 Preferences.Set("favorites", payload);
             }
             else
@@ -85,8 +95,18 @@ namespace AniHubApp.ViewModels
                 IsFavoriteColor = Color.LightGray;
                 IsFavoriteTextColor = Color.Black;
                 IsFavoriteText = "Favorite";
-                FavoritesViewModel.FavoriteAnimes.Remove(anime);
-                string payload = _jsonSerializer.SerializeObject(FavoritesViewModel.FavoriteAnimes);
+
+                var serializedData = Preferences.Get("favorites", null);
+                var favoriteAnimes = _jsonSerializer.Deserialize<ObservableCollection<Anime>>(serializedData);
+
+                if (favoriteAnimes == null)
+                {
+                    favoriteAnimes = new ObservableCollection<Anime>();
+                }
+
+                favoriteAnimes.Remove(anime);
+
+                string payload = _jsonSerializer.SerializeObject(favoriteAnimes);
                 Preferences.Set("favorites", payload);
             }
         }
