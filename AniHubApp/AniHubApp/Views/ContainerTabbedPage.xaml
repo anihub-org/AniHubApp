@@ -8,7 +8,7 @@
             BarBackgroundColor="#7E42F5"
             NavigationPage.HasNavigationBar="False">
     <TabbedPage.Children>
-        <views:HomePage Title="Home" IconImageSource="baseline_home_white_24.png/>
+        <views:HomePage Title="Home" IconImageSource="baseline_home_white_24.png"/>
         <views:SearchPage Title="Search" IconImageSource="baseline_search_white_24.png"/>
         <views:FavoritesPage Title="Favorite" IconImageSource="baseline_star_white_24.png" />
     </TabbedPage.Children>
