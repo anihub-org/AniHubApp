@@ -5,10 +5,9 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
     <ContentPage.Content>
         <Grid
-            Padding="10, 120"
-            HorizontalOptions="Center"
             RowDefinitions="Auto, Auto, Auto"
-            VerticalOptions="End">
+            VerticalOptions="FillAndExpand"
+            HorizontalOptions="FillAndExpand">
             <Grid.Background>
                 <LinearGradientBrush EndPoint="0,2">
                     <GradientStop Color="#0f0c29"
@@ -19,27 +18,27 @@
                                   Offset="1.0"/>
                 </LinearGradientBrush>
             </Grid.Background>
-            <AbsoluteLayout Grid.Row="0">
-                <Image
+            <Image Grid.Row="0"
                     HorizontalOptions="Center"
-                    Source="logo_transparent.png"
-                    Margin="0,0,0,100"
-                    AbsoluteLayout.LayoutBounds="-50, 100, 500, 400"/>
-            </AbsoluteLayout>
+                    Source="logo_transparent.png"/>
             <Label
                 Grid.Row="1"
                 Style="{StaticResource WhiteTitleLabelStyle}"
-                Text="Find your favorite animes here!" />
+                Text="Find your favorite animes here!"
+                HorizontalOptions="Center"
+                VerticalOptions="End"/>
             <Button
                 Grid.Row="2"
                 Command="{Binding NavigateToHomePageCommand}"
                 CornerRadius="30"
                 FontSize="Medium"
                 HorizontalOptions="CenterAndExpand"
+                TextColor="White"
                 FontAttributes="Bold"
                 Text="Discover Animes!"
                 TextTransform="None" 
-                BackgroundColor="#7161fa"/>
+                BackgroundColor="#7161fa"
+                VerticalOptions="End"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

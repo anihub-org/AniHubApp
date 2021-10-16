@@ -28,6 +28,10 @@
                 <Setter Property="FontSize" Value="Medium" />
                 <Setter Property="TextColor" Value="Gray"/>
             </Style>
+            <Style x:Key="CarouselLabelStyle" TargetType="Label">
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+                <Setter Property="TextColor" Value="White"/>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </prism:PrismApplication>
