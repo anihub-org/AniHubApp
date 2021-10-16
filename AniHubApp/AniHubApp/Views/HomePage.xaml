@@ -8,9 +8,19 @@
     NavigationPage.HasNavigationBar="False">
     <ContentPage.Content>
         <Grid
-            Padding="10"
+            Padding="10, 60"
             RowDefinitions="Auto, 230, Auto, 230, Auto, 100"
             VerticalOptions="End">
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0,2">
+                    <GradientStop Color="#0f0c29"
+                                  Offset="0.1"/>
+                    <GradientStop Color="#302b63"
+                                  Offset="0.5"/>
+                    <GradientStop Color="#24243e"
+                                  Offset="1.0"/>
+                </LinearGradientBrush>
+            </Grid.Background>
 
             <Label
                 Grid.Row="0"
@@ -22,6 +32,11 @@
                 Grid.Row="1"
                 ItemsSource="{Binding PopularAnimes}"
                 PeekAreaInsets="110">
+                <CarouselView.EmptyViewTemplate>
+                    <DataTemplate>
+                        <Label Text="No Anime to show..." />
+                    </DataTemplate>
+                </CarouselView.EmptyViewTemplate>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="0,10" RowDefinitions="Auto, Auto">
@@ -55,6 +70,11 @@
                 Grid.Row="3"
                 ItemsSource="{Binding SeasonalAnimes}"
                 PeekAreaInsets="110">
+                <CarouselView.EmptyViewTemplate>
+                    <DataTemplate>
+                        <Label Text="No Anime to show..." />
+                    </DataTemplate>
+                </CarouselView.EmptyViewTemplate>
                 <CarouselView.ItemTemplate>
                     <DataTemplate>
                         <Grid Padding="0,10" RowDefinitions="Auto, Auto">

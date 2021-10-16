@@ -11,10 +11,10 @@
                 Margin="7"
                 Padding="15">
                 <StackLayout Orientation="Horizontal">
-                    <Image Source="searchIconSmall.xml" />
+                    <Image Source="searchIcon24dp.png" />
                     <Label
                         Margin="0"
-                        Style="{StaticResource HeadingLabelStyle}"
+                        Style="{StaticResource SearchLabelStyle}"
                         Text="Anime"
                         VerticalOptions="Center" />
                     <StackLayout.GestureRecognizers>
@@ -29,6 +29,11 @@
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout Orientation="Vertical" Span="2" />
                 </CollectionView.ItemsLayout>
+                <CollectionView.EmptyViewTemplate>
+                    <DataTemplate>
+                        <Label Text="No Genres to show..." />
+                    </DataTemplate>
+                </CollectionView.EmptyViewTemplate>
                 <CollectionView.ItemTemplate>
                     <DataTemplate>
                         <Grid RowDefinitions="Auto,Auto">
